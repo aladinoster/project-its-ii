@@ -1,5 +1,7 @@
 # Project 3: Connected Vehicles
 
+This project is related to V2V modeling and the effects on the transport network. Let's consider first the work of 
+
 ## Objectives {-}
 
 This project consists in works based on [@Grandinetti2015]
