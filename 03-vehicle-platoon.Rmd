@@ -1,5 +1,7 @@
 # Project 2: Vehicle Platooning
 
+This project is related to vehicle platooning applications. In fact in order to check more details visit:
+
 ## Objectives {-}
 
 This project consists in works based on [@Grandinetti2015]
