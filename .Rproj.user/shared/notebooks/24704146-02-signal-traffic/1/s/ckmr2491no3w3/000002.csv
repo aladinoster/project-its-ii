@@ -1,0 +1,8 @@
+"0","library(ggplot2)"
+"0","N <- 10 # samples "
+"0","x <- c(seg(from = 1,  to = 30,  by = N),"
+"0","       seg(from = 30, to =  60,  by = N),"
+"0","       seg(from = 60, to =  90,  by = N),"
+"0","       seg(from = 90, to =  120, by = N))"
+"2","Error in seg(from = 1, to = 30, by = N) : could not find function ""seg""
+"
