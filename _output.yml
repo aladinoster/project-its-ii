@@ -5,8 +5,13 @@ bookdown::gitbook:
       before: |
         <li><a href="./">ITS-II Smart for Mobility</a></li>
       collapse: section
-      edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+      edit: https://github.com/aladinoster/project-its-ii/edit/master/%s
       download: ["pdf", "epub"]
+      search: yes 
+      fontsettings:
+        theme: White
+        family: sans
+      size: 2
       sharing: 
         facebook: yes
         twitter: yes

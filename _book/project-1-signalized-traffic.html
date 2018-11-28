@@ -210,30 +210,36 @@ Figure 2.1: Traffic light signal example.
 <p>Check models for macroscopic networks, determine the parameters for a network and present why these parameters.</p>
 <div id="context-1" class="section level4 unnumbered">
 <h4>Context</h4>
-<p>Before implementing a real scenario in this phase we aim to describe the context of a virtual example. Consider the following traffic
-network which obeys a simplified version of the real arterial scenario.</p>
+<p>Before implementing a real scenario in this phase we aim to describe the context of a virtual example. Consider the following traffic urban corridor which obeys a simplified version of the real arterial scenario.</p>
 
-<div class="figure" style="text-align: center"><span id="fig:network"></span>
-<img src="images/p1-01-network.png" alt="Example of traffic network https://pixabay.com."  />
+<div class="figure" style="text-align: center"><span id="fig:city"></span>
+<img src="images/p1-01-network.png" alt="Example of traffic network."  />
 <p class="caption">
-Figure 2.2: Example of traffic network <a href="Taken%20from:%20https://pixabay.com">https://pixabay.com</a>.
+Figure 2.2: Example of traffic network.
 </p>
 </div>
+<p>The network of Figure <a href="project-1-signalized-traffic.html#fig:city">2.2</a> represents a regular corridor in a city like. The priority for this type of corridors is to maximize the priority of green time so the traffic does not get congested along the network. It is important to highlight that for the proposed network</p>
 </div>
 <div id="questions" class="section level4 unnumbered">
 <h4>Questions</h4>
 <ul>
-<li>Determine the full signalized model for the network in</li>
+<li>For the network in Figure <a href="project-1-signalized-traffic.html#fig:city">2.2</a>, build a macroscopic traffic model in which</li>
+<li>Determine the <em>signalized</em> traffic model for the case where lights are installed along each intersection of the corridor. For those roads in which direction is not explicitly defined, consider the direction of a regular intersection.</li>
+<li>Determine the minimum amount of Origin Destin</li>
 </ul>
 </div>
 <div id="expected-outcomes" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
-<p>Design and obtain a model for a traffic signalized network of the following type</p>
-<p>Implement a basic simulation scenario where</p>
+<ul>
+<li><p>Present a brief summary of the existing current models that are</p></li>
+<li><p>Design and obtain a model for a traffic signalized network of the following type</p></li>
+<li><p>Define the set of parameters for the proposed scenario based on a previous calibrated traffic network.</p></li>
+</ul>
 </div>
 </div>
 <div id="task-2-simulation" class="section level3 unnumbered">
 <h3>Task 2: Simulation</h3>
+<p>Based on the previous model</p>
 <div id="context-2" class="section level4 unnumbered">
 <h4>Context</h4>
 </div>
@@ -337,8 +343,14 @@ gitbook.start({
 "download": ["its-2-project.pdf", "its-2-project.epub"],
 "toc": {
 "collapse": "section",
-"edit": "https://github.com/rstudio/bookdown-demo/edit/master/%s",
+"edit": "https://github.com/aladinoster/project-its-ii/edit/master/%s",
 "download": ["pdf", "epub"],
+"search": true,
+"fontsettings": {
+"theme": "White",
+"family": "sans"
+},
+"size": 2,
 "sharing": {
 "facebook": true,
 "twitter": true,

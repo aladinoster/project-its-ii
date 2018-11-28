@@ -41,27 +41,34 @@ Check models for macroscopic networks, determine the parameters for a network an
 
 #### Context {-}
 
-Before implementing a real scenario in this phase we aim to describe the context of a virtual example. Consider the following traffic
-network which obeys a simplified version of the real arterial scenario. 
+Before implementing a real scenario in this phase we aim to describe the context of a virtual example. Consider the following traffic urban corridor which obeys a simplified version of the real arterial scenario. 
 
-(ref:city) Example of traffic network [https://pixabay.com](Taken from: https://pixabay.com). 
+(ref:city) Example of traffic network. 
 
-```{r network, fig.cap='(ref:city)', fig.align = 'center', fig.width = 4, echo= FALSE}
+```{r city, fig.cap='(ref:city)', fig.align = 'center', fig.width = 4, echo= FALSE}
 knitr::include_graphics("images/p1-01-network.png")
 ```
 
+The network of Figure \@ref(fig:city) represents a regular corridor in a city like. The priority for this type of corridors is to maximize the priority of green time so the traffic does not get congested along the network. It is important to highlight that for the proposed network 
+
 #### Questions {-}
 
-* Determine the full signalized model for the network in 
+* For the network in Figure \@ref(fig:city), build a macroscopic traffic model in which 
+* Determine the *signalized* traffic model for the case where lights are installed along each intersection of the corridor. For those roads in which direction is not explicitly defined, consider the direction of a regular intersection. 
+* Determine the minimum amount of Origin Destin
 
 
 #### Expected outcomes {-}
 
-Design and obtain a model for a traffic signalized network of the following type 
+* Present a brief summary of the existing current models that are 
 
-Implement a basic simulation scenario where 
+* Design and obtain a model for a traffic signalized network of the following type 
+
+* Define the set of parameters for the proposed scenario based on a previous calibrated traffic network. 
 
 ### Task 2: Simulation {-}
+
+Based on the previous model 
 
 #### Context {-}
 
