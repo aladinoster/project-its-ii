@@ -8,6 +8,38 @@ This project consists in works based on [@Grandinetti2015]
 
 ## Description {-}
 
+### Task 1: Platoon modeling {-}
+
+#### Context {-}
+
+#### Questions {-}
+
+#### Expected outcomes {-}
+
+### Task 2: Open loop simulation {-}
+
+#### Context {-}
+
+#### Questions {-}
+
+#### Expected outcomes {-}
+
+### Task 3: Vehicle platoon control {-}
+
+#### Context {-}
+
+#### Questions {-}
+
+#### Expected outcomes {-}
+
+### Task 4: Performance evaluation {-}
+
+#### Context {-}
+
+#### Questions {-}
+
+#### Expected outcomes {-}
+
 ## Sources {-}
 
 - [Simulation results - Github](https://github.com/aladinoster/density-reconstruction)

@@ -53,6 +53,7 @@ The network of Figure \@ref(fig:city) represents a regular corridor in a city li
 
 #### Questions {-}
 
+* Based on a literature review, determine current existing traffic models for signalized traffic networks. 
 * For the network in Figure \@ref(fig:city), build a macroscopic traffic model in which 
 * Determine the *signalized* traffic model for the case where lights are installed along each intersection of the corridor. For those roads in which direction is not explicitly defined, consider the direction of a regular intersection. 
 * Determine the minimum amount of Origin Destin
@@ -60,21 +61,43 @@ The network of Figure \@ref(fig:city) represents a regular corridor in a city li
 
 #### Expected outcomes {-}
 
-* Present a brief summary of the existing current models that are 
+* Present a brief summary of the existing current models for signalized traffic networks. At same time highlight the key features of these models and the remaining difficulties. Consider including references for the presented models. 
 
-* Design and obtain a model for a traffic signalized network of the following type 
+* Based on [@Grandinetti2015] obtain a model for the signalized network of Figure \@ref(fig:city) and the parameters required model this corridor. 
 
-* Define the set of parameters for the proposed scenario based on a previous calibrated traffic network. 
+* Define the set of parameters for the traffic network, notably those related to the fundamental diagram as well as the traffic light signal timings. Consider a fixed setup of this parameters for the moment and overall explain the reason of the choice.  
 
 ### Task 2: Simulation {-}
 
-Based on the previous model 
+Dynamic simulation  of open loop traffic networks. 
 
 #### Context {-}
 
+Based on the model established in the **Task 1** and considering a family of especific parameters. Perform a simulation for a constant demand value of demand in $veh/hr$ as specified in the Figure\@ref(fig:flow). 
+
+(ref:flow) Demand profiles for a specified scenario. 
+
+```{r flow, fig.cap='(ref:flow)', fig.align = 'center', fig.width = 4, echo= FALSE}
+knitr::include_graphics("images/p1-02-flows.png")
+```
+
 #### Questions {-}
 
+* Simulate and obtain density plots of the dynamic the behaviour when the *duty cyle* of lights is similar for all the traffic lights. $50\%$
+
+* Does the current values create a congestion in the proposed network?
+
+* How can the performance of the network be improved? Create a second set of parameters for the traffic lights *duty cycle* and 
+
+* For the existing model and according to [@Grandinetti2015] obtain the two different *density* and *flow* dynamic profiles between a *switched* signalized traffic model and an *averaged* traffic model 
+
 #### Expected outcomes {-}
+
+* Present th. e dynamic profiles for density on each one of the roads under different setups of traffic lights. The dynamic profiles should specify density per road in time  
+
+* Provide comparissons between different traffic signalized models and an analysis on how this error evolves according to different values of demand. 
+
+* Specify a second set of parameters for *duty cycle* that could improve the performance of the network with respect to the $50\%$ case. Justify the reason of your choice and verify in results the desired behavior. 
 
 ### Task 3: Control strategy {-}
 
@@ -98,12 +121,10 @@ Based on the previous model
 
 Traffic control networks can be regularly modeled via: 
 
-### 
-
 ## Sources {-}
 
-For more details on the project please check: 
+For more details on how to deploy traffic simulations and traffic models please check:
 
 - [Traffic Macrosimulator - Github](https://github.com/andres-ladino-ifsttar/traffic-macrosimulator)
 
-- Check [@Grandinetti2015] available [Link](https://hal.archives-ouvertes.fr/hal-01188535) and [@Grandinetti2016] [Link](https://hal.archives-ouvertes.fr/hal-01188811)
+- For traffic models check [@Grandinetti2015] available [Link](https://hal.archives-ouvertes.fr/hal-01188535) and [@Grandinetti2016] available at [Link](https://hal.archives-ouvertes.fr/hal-01188811)

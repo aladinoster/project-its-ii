@@ -31,6 +31,8 @@ Traffic congestion on urban roads is a problem of great interest nowadays since 
 
 The current project aims to explore some of the new technologies used in the so called Intelligent Transportation Systems (ITS). They objective is to study to a certain level of detail some of the new traffic management systems that will conduct new ways of transportation in the XXI century. The general idea is based on the fact that information collected by sensors within traffic networks or in-vehicles sensors can collect information regarding the traffic condition, perform estimation of unknown traffic states and decide on specific actions to modify this state.  
 
+## Projects {-}
+
 Specially, in this case the project will be focused in four main activities: 
 
 - **Trafic signal design:** This projects aims to study how to optimally deal with the design of light cycles to optimize the traffic performance. Based on information collected by infrastructure based sensors the traffic state can be determined and specific decisions in terms on green/red light times can be dynamically adapted. 
