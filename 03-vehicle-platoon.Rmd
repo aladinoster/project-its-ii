@@ -1,6 +1,10 @@
 # Project 2: Vehicle Platooning
 
-This project is related to vehicle platooning applications. In fact in order to check more details visit:
+The main objective of this project is to design a controller for a platoon of vehicles in order to optimize the flow 
+and reduce the fuel consumption. A platoon of vehicles can be seen as: 
+
+
+
 
 ## Objectives {-}
 
@@ -23,6 +27,8 @@ This project consists in works based on [@Grandinetti2015]
 #### Questions {-}
 
 #### Expected outcomes {-}
+
+* Obtain the trajectories for a platoon of 4 vehicles 
 
 ### Task 3: Vehicle platoon control {-}
 

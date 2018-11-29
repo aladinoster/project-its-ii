@@ -25,7 +25,6 @@
 <meta name="author" content="Andres Ladino - Angelo Furno">
 
 
-<meta name="date" content="2018-10-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -145,7 +144,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="project-1-signalized-traffic.html"><a href="project-1-signalized-traffic.html#task-2-simulation"><i class="fa fa-check"></i>Task 2: Simulation</a></li>
 <li class="chapter" data-level="" data-path="project-1-signalized-traffic.html"><a href="project-1-signalized-traffic.html#task-3-control-strategy"><i class="fa fa-check"></i>Task 3: Control strategy</a></li>
 <li class="chapter" data-level="" data-path="project-1-signalized-traffic.html"><a href="project-1-signalized-traffic.html#task-4-performance-evaluation"><i class="fa fa-check"></i>Task 4: Performance evaluation</a></li>
-<li class="chapter" data-level="" data-path="project-1-signalized-traffic.html"><a href="project-1-signalized-traffic.html#fundamentals-on-macroscopic-traffic-flow-modeling"><i class="fa fa-check"></i>Fundamentals on Macroscopic traffic flow modeling</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="project-1-signalized-traffic.html"><a href="project-1-signalized-traffic.html#sources"><i class="fa fa-check"></i>Sources</a></li>
 </ul></li>
@@ -268,7 +266,7 @@ Figure 2.3: Demand profiles for a specified scenario.
 <div id="expected-outcomes-1" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
 <ul>
-<li><p>Present th. e dynamic profiles for density on each one of the roads under different setups of traffic lights. The dynamic profiles should specify density per road in time</p></li>
+<li><p>Present the dynamic profiles for density on each one of the roads under different setups of traffic lights. The dynamic profiles should specify density per road in time</p></li>
 <li><p>Provide comparissons between different traffic signalized models and an analysis on how this error evolves according to different values of demand.</p></li>
 <li><p>Specify a second set of parameters for <em>duty cycle</em> that could improve the performance of the network with respect to the <span class="math inline">\(50\%\)</span> case. Justify the reason of your choice and verify in results the desired behavior.</p></li>
 </ul>
@@ -276,31 +274,60 @@ Figure 2.3: Demand profiles for a specified scenario.
 </div>
 <div id="task-3-control-strategy" class="section level3 unnumbered">
 <h3>Task 3: Control strategy</h3>
+<p>For this task we aim to consider the <em>duty cycle</em> as a control input variable to regulate the flow within the traffic network. In this case take into account that the decision variable needs somehow to be determined dynamically via a control algorithm.</p>
 <div id="context-3" class="section level4 unnumbered">
 <h4>Context</h4>
+<p>For the Figure <a href="project-1-signalized-traffic.html#fig:tlight">2.1</a> the average value can be found as:</p>
+<p><span class="math display" id="eq:avgu">\[\begin{equation}
+\bar{u} = \frac{1}{T}\int_0^T u(\tau) d\tau \tag{2.1}
+\end{equation}\]</span></p>
+<p>As it is illustrated in <span class="citation">(Grandinetti, Garin, and Canudas-de-wit <a href="#ref-Grandinetti2016">2015</a>)</span>, in Eq. <a href="project-1-signalized-traffic.html#eq:avgu">(2.1)</a> is easier to design a value for <span class="math inline">\(\bar{u}\)</span> rather than <span class="math inline">\(u\)</span> due to its binary character.</p>
 </div>
 <div id="questions-2" class="section level4 unnumbered">
 <h4>Questions</h4>
+<ul>
+<li><p>Explain and construct a block diagram illustrating the control of the road traffic network via traffic signals</p></li>
+<li><p>Design and present an algorithm that takes decisions for the traffic signals based on the state of the network. How would you construct the value of <span class="math inline">\(u\)</span> based on the congestion state of the network.</p></li>
+<li><p>Perform simulations of the system under a preestablished manual control and compare it to a situation where the control depends on the congestion state of the network.</p></li>
+</ul>
 </div>
 <div id="expected-outcomes-2" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
+<ul>
+<li><p>Present a comparisson between the traffic network with signalized control and without signalized control.</p></li>
+<li><p>Apply the controller over different versions of the model notably <em>averaged</em> and <em>switched</em></p></li>
+<li><p>Compare the open loop situation with the closed loop situation and provide conclussions on the control performance.</p></li>
+</ul>
 </div>
 </div>
 <div id="task-4-performance-evaluation" class="section level3 unnumbered">
 <h3>Task 4: Performance evaluation</h3>
+<p>Finally in order to compare it is important to determine indicators than can be designed in order to compare the effects of introducing an automated control strategy.</p>
 <div id="context-4" class="section level4 unnumbered">
 <h4>Context</h4>
+<p>Indicators for traffic networks are regularly expressed in terms of the state of the network, for example the <em>Service of Demand</em> (SoD) measured in terms of flow:</p>
+<p><span class="math display" id="eq:sod">\[\begin{equation}
+SOD = \int_0^T \sum_{r \in R} f_r(\tau) d\tau \tag{2.2}
+\end{equation}\]</span></p>
+<p>Or the <em>Total Travel Distance</em> (TTD) measured in terms of the density</p>
+<p><span class="math display" id="eq:ttd">\[\begin{equation}
+TTD = \int_0^T \sum_{r \in R} \rho_r(\tau) d\tau \tag{2.3}
+\end{equation}\]</span></p>
 </div>
 <div id="questions-3" class="section level4 unnumbered">
 <h4>Questions</h4>
+<ul>
+<li><p>What does the aforementioned indicators represent?</p></li>
+<li><p>Measure the indicators over the traffic network with a manual setup of traffic signals <em>open-loop</em> vs a controlled setup of traffic signals <em>closed-loop</em>.</p></li>
+</ul>
 </div>
 <div id="expected-outcomes-3" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
+<ul>
+<li><p>Report indicators for both cases and conclude about the results.</p></li>
+<li><p>Provide recomendations on how to design <span class="math inline">\(u\)</span> for the corridor</p></li>
+</ul>
 </div>
-</div>
-<div id="fundamentals-on-macroscopic-traffic-flow-modeling" class="section level3 unnumbered">
-<h3>Fundamentals on Macroscopic traffic flow modeling</h3>
-<p>Traffic control networks can be regularly modeled via:</p>
 </div>
 </div>
 <div id="sources" class="section level2 unnumbered">

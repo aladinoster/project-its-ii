@@ -92,7 +92,7 @@ knitr::include_graphics("images/p1-02-flows.png")
 
 #### Expected outcomes {-}
 
-* Present th. e dynamic profiles for density on each one of the roads under different setups of traffic lights. The dynamic profiles should specify density per road in time  
+* Present the dynamic profiles for density on each one of the roads under different setups of traffic lights. The dynamic profiles should specify density per road in time  
 
 * Provide comparissons between different traffic signalized models and an analysis on how this error evolves according to different values of demand. 
 
@@ -100,25 +100,63 @@ knitr::include_graphics("images/p1-02-flows.png")
 
 ### Task 3: Control strategy {-}
 
+For this task we aim to consider the *duty cycle* as a control input variable to regulate the flow within the traffic network. In this case take into account that the decision variable needs somehow to be determined dynamically via a control algorithm. 
+
 #### Context {-}
+
+For the Figure \@ref(fig:tlight) the average value can be found as: 
+
+\begin{equation}
+\bar{u} = \frac{1}{T}\int_0^T u(\tau) d\tau (\#eq:avgu)
+\end{equation}
+
+As it is illustrated in [@Grandinetti2016], in Eq. \@ref(eq:avgu) is easier to design a value for $\bar{u}$ rather than $u$ due to its binary character.  
 
 #### Questions {-}
 
+* Explain and construct a block diagram illustrating the control of the road traffic network via traffic signals 
+
+* Design and present an algorithm that takes decisions for the traffic signals based on the state of the network. How would you construct the value of $u$ based on the congestion state of the network. 
+
+* Perform simulations of the system under a preestablished manual control and compare it to a situation where the control depends on the congestion state of the network. 
+
 #### Expected outcomes {-}
+
+* Present a comparisson between the traffic network with signalized control and without signalized control. 
+
+* Apply the controller over different versions of the model notably *averaged* and *switched*
+
+* Compare the open loop situation with the closed loop situation and provide conclussions on the control performance. 
 
 ### Task 4: Performance evaluation {-}
 
+Finally in order to compare it is important to determine indicators than can be designed in order to compare the effects of introducing an automated control strategy. 
+
 #### Context {-}
+
+Indicators for traffic networks are regularly expressed in terms of the state of the network, for example the *Service of Demand* (SoD) measured in terms of flow: 
+
+\begin{equation}
+SOD = \int_0^T \sum_{r \in R} f_r(\tau) d\tau (\#eq:sod)
+\end{equation}
+
+Or the *Total Travel Distance* (TTD) measured in terms of the density
+
+\begin{equation}
+TTD = \int_0^T \sum_{r \in R} \rho_r(\tau) d\tau (\#eq:ttd)
+\end{equation}
 
 #### Questions {-}
 
+* What does the aforementioned indicators represent? 
+
+* Measure the indicators over the traffic network with a manual setup of traffic signals *open-loop* vs a controlled setup of traffic signals *closed-loop*.
+
 #### Expected outcomes {-}
 
+* Report indicators for both cases and conclude about the results. 
 
-
-### Fundamentals on Macroscopic traffic flow modeling {-}
-
-Traffic control networks can be regularly modeled via: 
+* Provide recomendations on how to design $u$ for the corridor 
 
 ## Sources {-}
 

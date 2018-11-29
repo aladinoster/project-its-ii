@@ -1,7 +1,7 @@
 ---
 title: "Intelligent Transportation Systems ITS - II"
 author: "Andres Ladino - Angelo Furno"
-date: "10/30/2018"
+date: "29/11/2018"
 output: bookdown::gitbook
 site: bookdown::bookdown_site
 bibliography: book.bib
