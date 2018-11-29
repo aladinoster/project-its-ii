@@ -37,7 +37,7 @@ The main objective of this project is to:
 
 ### Task 1: Modeling {-}
 
-Check models for macroscopic networks, determine the parameters for a network and present why these parameters. 
+Check models for macroscopic networks: [@Grandinetti2015], [@Grandinetti2016],[@Varaiya2013:TR-C]. Determine the parameters required to model a road traffic network. 
 
 #### Context {-}
 
@@ -68,7 +68,7 @@ The network of Figure \@ref(fig:city) represents a regular corridor in a city li
 
 ### Task 2: Simulation {-}
 
-Dynamic simulation  of open loop traffic networks. 
+Dynamic simulation  of open loop traffic networks. For this task be sure to review already implemented simulations available at [Link]((https://github.com/andres-ladino-ifsttar/traffic-macrosimulator)). Get familiar with the code here developed before you enter into details of implementation. 
 
 #### Context {-}
 
