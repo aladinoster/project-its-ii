@@ -56,7 +56,6 @@ The network of Figure \@ref(fig:city) represents a regular corridor in a city li
 * Based on a literature review, determine current existing traffic models for signalized traffic networks. 
 * For the network in Figure \@ref(fig:city), build a macroscopic traffic model in which 
 * Determine the *signalized* traffic model for the case where lights are installed along each intersection of the corridor. For those roads in which direction is not explicitly defined, consider the direction of a regular intersection. 
-* Determine the minimum amount of Origin Destin
 
 
 #### Expected outcomes {-}
