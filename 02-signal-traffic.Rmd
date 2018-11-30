@@ -20,7 +20,7 @@ ggplot(data=df,aes(x=Time,y=Light))+geom_path() +
 ```
 
 
-The relationship between the switched green/red time in a traffic light can be represented by a pulse signal (Figure \@ref(fig:tlight)). The red line in the figure represents the *duty cycle* which represents the fraction of time the light was in green ($1$) with respect to the total cycle time ($60s$). In this case, the main objective is to study traffic models that can model signalized intersections and design control laws to design. 
+The relationship between the switched green/red time in a traffic light can be represented by a pulse signal (Figure \@ref(fig:tlight)). The red line in the figure represents the *duty cycle* which represents the fraction of time the light was in green ($1$) with respect to the total cycle time ($60s$). In this case, the main objective is to study traffic models that can model signalized intersections and design control laws. 
 
 ***
 
@@ -31,7 +31,7 @@ The main objective of this project is to:
 1. Study the fundamental aspects of traffic signal control strategies. 
 2. Obtain and simulate a macroscopic traffic model for a urban network with traffic signals 
 3. Create and design control strategies applied via traffic signals in urban traffic networks. 
-4. Compare the behavior of fixed time traffic signal polices and dynamic time traffic signal polices. 
+4. Compare the behavior of fixed-time traffic signal polices and dynamic-time traffic signal polices. 
 
 ## Description {-}
 
@@ -54,8 +54,8 @@ The network of Figure \@ref(fig:city) represents a regular corridor in a city li
 #### Questions {-}
 
 * Based on a literature review, determine current existing traffic models for signalized traffic networks. 
-* For the network in Figure \@ref(fig:city), build a macroscopic traffic model in which 
-* Determine the *signalized* traffic model for the case where lights are installed along each intersection of the corridor. For those roads in which direction is not explicitly defined, consider the direction of a regular intersection. 
+* For the network in Figure \@ref(fig:city), build a macroscopic signalized traffic model.
+* Determine the *signalized/averaged* traffic model for the case where lights are installed along each intersection of the corridor. For those roads in which direction is not explicitly defined, consider the direction of a regular intersection. 
 
 
 #### Expected outcomes {-}
@@ -68,11 +68,11 @@ The network of Figure \@ref(fig:city) represents a regular corridor in a city li
 
 ### Task 2: Simulation {-}
 
-Dynamic simulation  of open loop traffic networks. For this task be sure to review already implemented simulations available at [Link]((https://github.com/andres-ladino-ifsttar/traffic-macrosimulator)). Get familiar with the code here developed before you enter into details of implementation. 
+Dynamic simulation  of open loop traffic networks. For this task be sure to review already implemented simulations available at [Link](https://github.com/andres-ladino-ifsttar/traffic-macrosimulator). Get familiar with the code here developed before you enter into details of implementation. 
 
 #### Context {-}
 
-Based on the model established in the **Task 1** and considering a family of especific parameters. Perform a simulation for a constant demand value of demand in $veh/hr$ as specified in the Figure\@ref(fig:flow). 
+Based on the model established in the **Task 1** and considering a family of specific parameters, perform a simulation for a constant demand value of demand in $veh/hr$ as specified in the Figure\@ref(fig:flow). 
 
 (ref:flow) Demand profiles for a specified scenario. 
 
@@ -86,7 +86,7 @@ knitr::include_graphics("images/p1-02-flows.png")
 
 * Does the current values create a congestion in the proposed network?
 
-* How can the performance of the network be improved? Create a second set of parameters for the traffic lights *duty cycle* and 
+* How can the performance of the network be improved? Create a second set of parameters for the traffic lights *duty cycle* 
 
 * For the existing model and according to [@Grandinetti2015] obtain the two different *density* and *flow* dynamic profiles between a *switched* signalized traffic model and an *averaged* traffic model 
 
@@ -94,7 +94,7 @@ knitr::include_graphics("images/p1-02-flows.png")
 
 * Present the dynamic profiles for density on each one of the roads under different setups of traffic lights. The dynamic profiles should specify density per road in time  
 
-* Provide comparissons between different traffic signalized models and an analysis on how this error evolves according to different values of demand. 
+* Provide comparisons between different traffic signalized models and an analysis on how this error evolves according to different values of demand. 
 
 * Specify a second set of parameters for *duty cycle* that could improve the performance of the network with respect to the $50\%$ case. Justify the reason of your choice and verify in results the desired behavior. 
 
@@ -122,7 +122,7 @@ As it is illustrated in [@Grandinetti2016], in Eq. \@ref(eq:avgu) is easier to d
 
 #### Expected outcomes {-}
 
-* Present a comparisson between the traffic network with signalized control and without signalized control. 
+* Present a comparison between the traffic network with signalized control and without signalized control. 
 
 * Apply the controller over different versions of the model notably *averaged* and *switched*
 
