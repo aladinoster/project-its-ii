@@ -130,7 +130,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{10/30/2018}
+    \date{29/11/2018}
 
 \usepackage[utf8]{inputenc} % Accent inputs
 \usepackage[english]{babel} % English language/hyphenation
@@ -208,6 +208,10 @@ collect information regarding the traffic condition, perform estimation
 of unknown traffic states and decide on specific actions to modify this
 state.
 
+\hypertarget{projects}{%
+\section*{Projects}\label{projects}}
+\addcontentsline{toc}{section}{Projects}
+
 Specially, in this case the project will be focused in four main
 activities:
 
@@ -220,19 +224,13 @@ activities:
   sensors the traffic state can be determined and specific decisions in
   terms on green/red light times can be dynamically adapted.
 \item
-  \textbf{Connected \& automated vehicles:} New in-vechicle sensors
-  create situations in which vehicles may exchange information to
-  improve traffic conditions. This project aims to study control
-  algorithms implemented in the V2V (Vehicle-vehicle) communication
-  layer that can be used to design traffic decisions.
+  \textbf{Vehicle Platooning:} New in-vechicle sensors create situations
+  in which vehicles may exchange information to improve traffic
+  conditions. This project aims to study control algorithms implemented
+  in the V2V (Vehicle-vehicle) communication layer that can be used to
+  design traffic decisions.
 \item
-  \textbf{Eco-driving:} Connectivity between vehicles and
-  infrastructures will define future directions in transportation.
-  Shared information in the V2I (Vehicle-infrastructure) I2V
-  (Infrastructure-vehicle) communication layers can optimize traffic
-  conditions in apects like fuel-efficiency.\\
-\item
-  \textbf{Traffic variable reconstruction:} Sensors installed in traffic
+  \textbf{Density reconstruction:} Sensors installed in traffic
   infrastructures provide information regarding the traffic state.
   Nevertheless the solution is not scalable to cover large cities due to
   the economical leverage required to deploy this technology. Algorithms
@@ -261,7 +259,8 @@ activities:
 \end{itemize}
 
 \hypertarget{project-information}{%
-\chapter{Project information}\label{project-information}}
+\chapter*{Project information}\label{project-information}}
+\addcontentsline{toc}{chapter}{Project information}
 
 \hypertarget{deliverables}{%
 \section*{Deliverables}\label{deliverables}}
@@ -360,7 +359,7 @@ line in the figure represents the \emph{duty cycle} which represents the
 fraction of time the light was in green (\(1\)) with respect to the
 total cycle time (\(60s\)). In this case, the main objective is to study
 traffic models that can model signalized intersections and design
-control laws to design.
+control laws.
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -370,30 +369,303 @@ control laws to design.
 
 The main objective of this project is to:
 
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Study the fundamental aspects of traffic signal control strategies.
+\item
+  Obtain and simulate a macroscopic traffic model for a urban network
+  with traffic signals
+\item
+  Create and design control strategies applied via traffic signals in
+  urban traffic networks.
+\item
+  Compare the behavior of fixed-time traffic signal polices and
+  dynamic-time traffic signal polices.
+\end{enumerate}
+
 \hypertarget{description}{%
 \section*{Description}\label{description}}
 \addcontentsline{toc}{section}{Description}
+
+\hypertarget{task-1-modeling}{%
+\subsection*{Task 1: Modeling}\label{task-1-modeling}}
+\addcontentsline{toc}{subsection}{Task 1: Modeling}
+
+Check models for macroscopic networks: \autocite{Grandinetti2015},
+\autocite{Grandinetti2016},\autocite{Varaiya2013:TR-C}. Determine the
+parameters required to model a road traffic network.
+
+\hypertarget{context-1}{%
+\subsubsection*{Context}\label{context-1}}
+\addcontentsline{toc}{subsubsection}{Context}
+
+Before implementing a real scenario in this phase we aim to describe the
+context of a virtual example. Consider the following traffic urban
+corridor which obeys a simplified version of the real arterial scenario.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics{images/p1-01-network} 
+
+}
+
+\caption{Example of traffic network.}\label{fig:city}
+\end{figure}
+
+The network of Figure \ref{fig:city} represents a regular corridor in a
+city like. The priority for this type of corridors is to maximize the
+priority of green time so the traffic does not get congested along the
+network. It is important to highlight that for the proposed network
+
+\hypertarget{questions}{%
+\subsubsection*{Questions}\label{questions}}
+\addcontentsline{toc}{subsubsection}{Questions}
+
+\begin{itemize}
+\tightlist
+\item
+  Based on a literature review, determine current existing traffic
+  models for signalized traffic networks.
+\item
+  For the network in Figure \ref{fig:city}, build a macroscopic
+  signalized traffic model.
+\item
+  Determine the \emph{signalized/averaged} traffic model for the case
+  where lights are installed along each intersection of the corridor.
+  For those roads in which direction is not explicitly defined, consider
+  the direction of a regular intersection.
+\end{itemize}
+
+\hypertarget{expected-outcomes}{%
+\subsubsection*{Expected outcomes}\label{expected-outcomes}}
+\addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\begin{itemize}
+\item
+  Present a brief summary of the existing current models for signalized
+  traffic networks. At same time highlight the key features of these
+  models and the remaining difficulties. Consider including references
+  for the presented models.
+\item
+  Based on \autocite{Grandinetti2015} obtain a model for the signalized
+  network of Figure \ref{fig:city} and the parameters required model
+  this corridor.
+\item
+  Define the set of parameters for the traffic network, notably those
+  related to the fundamental diagram as well as the traffic light signal
+  timings. Consider a fixed setup of this parameters for the moment and
+  overall explain the reason of the choice.
+\end{itemize}
+
+\hypertarget{task-2-simulation}{%
+\subsection*{Task 2: Simulation}\label{task-2-simulation}}
+\addcontentsline{toc}{subsection}{Task 2: Simulation}
+
+Dynamic simulation of open loop traffic networks. For this task be sure
+to review already implemented simulations available at
+\href{https://github.com/andres-ladino-ifsttar/traffic-macrosimulator}{Link}.
+Get familiar with the code here developed before you enter into details
+of implementation.
+
+\hypertarget{context-2}{%
+\subsubsection*{Context}\label{context-2}}
+\addcontentsline{toc}{subsubsection}{Context}
+
+Based on the model established in the \textbf{Task 1} and considering a
+family of specific parameters, perform a simulation for a constant
+demand value of demand in \(veh/hr\) as specified in the
+Figure\ref{fig:flow}.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics{images/p1-02-flows} 
+
+}
+
+\caption{Demand profiles for a specified scenario.}\label{fig:flow}
+\end{figure}
+
+\hypertarget{questions-1}{%
+\subsubsection*{Questions}\label{questions-1}}
+\addcontentsline{toc}{subsubsection}{Questions}
+
+\begin{itemize}
+\item
+  Simulate and obtain density plots of the dynamic the behaviour when
+  the \emph{duty cyle} of lights is similar for all the traffic lights.
+  \(50\%\)
+\item
+  Does the current values create a congestion in the proposed network?
+\item
+  How can the performance of the network be improved? Create a second
+  set of parameters for the traffic lights \emph{duty cycle}
+\item
+  For the existing model and according to \autocite{Grandinetti2015}
+  obtain the two different \emph{density} and \emph{flow} dynamic
+  profiles between a \emph{switched} signalized traffic model and an
+  \emph{averaged} traffic model
+\end{itemize}
+
+\hypertarget{expected-outcomes-1}{%
+\subsubsection*{Expected outcomes}\label{expected-outcomes-1}}
+\addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\begin{itemize}
+\item
+  Present the dynamic profiles for density on each one of the roads
+  under different setups of traffic lights. The dynamic profiles should
+  specify density per road in time
+\item
+  Provide comparisons between different traffic signalized models and an
+  analysis on how this error evolves according to different values of
+  demand.
+\item
+  Specify a second set of parameters for \emph{duty cycle} that could
+  improve the performance of the network with respect to the \(50\%\)
+  case. Justify the reason of your choice and verify in results the
+  desired behavior.
+\end{itemize}
+
+\hypertarget{task-3-control-strategy}{%
+\subsection*{Task 3: Control strategy}\label{task-3-control-strategy}}
+\addcontentsline{toc}{subsection}{Task 3: Control strategy}
+
+For this task we aim to consider the \emph{duty cycle} as a control
+input variable to regulate the flow within the traffic network. In this
+case take into account that the decision variable needs somehow to be
+determined dynamically via a control algorithm.
+
+\hypertarget{context-3}{%
+\subsubsection*{Context}\label{context-3}}
+\addcontentsline{toc}{subsubsection}{Context}
+
+For the Figure \ref{fig:tlight} the average value can be found as:
+
+\begin{equation}
+\bar{u} = \frac{1}{T}\int_0^T u(\tau) d\tau \label{eq:avgu}
+\end{equation}
+
+As it is illustrated in \autocite{Grandinetti2016}, in Eq. \eqref{eq:avgu}
+is easier to design a value for \(\bar{u}\) rather than \(u\) due to its
+binary character.
+
+\hypertarget{questions-2}{%
+\subsubsection*{Questions}\label{questions-2}}
+\addcontentsline{toc}{subsubsection}{Questions}
+
+\begin{itemize}
+\item
+  Explain and construct a block diagram illustrating the control of the
+  road traffic network via traffic signals
+\item
+  Design and present an algorithm that takes decisions for the traffic
+  signals based on the state of the network. How would you construct the
+  value of \(u\) based on the congestion state of the network.
+\item
+  Perform simulations of the system under a preestablished manual
+  control and compare it to a situation where the control depends on the
+  congestion state of the network.
+\end{itemize}
+
+\hypertarget{expected-outcomes-2}{%
+\subsubsection*{Expected outcomes}\label{expected-outcomes-2}}
+\addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\begin{itemize}
+\item
+  Present a comparison between the traffic network with signalized
+  control and without signalized control.
+\item
+  Apply the controller over different versions of the model notably
+  \emph{averaged} and \emph{switched}
+\item
+  Compare the open loop situation with the closed loop situation and
+  provide conclussions on the control performance.
+\end{itemize}
+
+\hypertarget{task-4-performance-evaluation}{%
+\subsection*{Task 4: Performance
+evaluation}\label{task-4-performance-evaluation}}
+\addcontentsline{toc}{subsection}{Task 4: Performance evaluation}
+
+Finally in order to compare it is important to determine indicators than
+can be designed in order to compare the effects of introducing an
+automated control strategy.
+
+\hypertarget{context-4}{%
+\subsubsection*{Context}\label{context-4}}
+\addcontentsline{toc}{subsubsection}{Context}
+
+Indicators for traffic networks are regularly expressed in terms of the
+state of the network, for example the \emph{Service of Demand} (SoD)
+measured in terms of flow:
+
+\begin{equation}
+SOD = \int_0^T \sum_{r \in R} f_r(\tau) d\tau \label{eq:sod}
+\end{equation}
+
+Or the \emph{Total Travel Distance} (TTD) measured in terms of the
+density
+
+\begin{equation}
+TTD = \int_0^T \sum_{r \in R} \rho_r(\tau) d\tau \label{eq:ttd}
+\end{equation}
+
+\hypertarget{questions-3}{%
+\subsubsection*{Questions}\label{questions-3}}
+\addcontentsline{toc}{subsubsection}{Questions}
+
+\begin{itemize}
+\item
+  What does the aforementioned indicators represent?
+\item
+  Measure the indicators over the traffic network with a manual setup of
+  traffic signals \emph{open-loop} vs a controlled setup of traffic
+  signals \emph{closed-loop}.
+\end{itemize}
+
+\hypertarget{expected-outcomes-3}{%
+\subsubsection*{Expected outcomes}\label{expected-outcomes-3}}
+\addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\begin{itemize}
+\item
+  Report indicators for both cases and conclude about the results.
+\item
+  Provide recomendations on how to design \(u\) for the corridor
+\end{itemize}
 
 \hypertarget{sources}{%
 \section*{Sources}\label{sources}}
 \addcontentsline{toc}{section}{Sources}
 
-For more details on the project please check:
+For more details on how to deploy traffic simulations and traffic models
+please check:
 
 \begin{itemize}
 \item
   \href{https://github.com/andres-ladino-ifsttar/traffic-macrosimulator}{Traffic
   Macrosimulator - Github}
 \item
-  Check \autocite{Grandinetti2015} available
+  For traffic models check \autocite{Grandinetti2015} available
   \href{https://hal.archives-ouvertes.fr/hal-01188535}{Link} and
-  \autocite{Grandinetti2016}
+  \autocite{Grandinetti2016} available at
   \href{https://hal.archives-ouvertes.fr/hal-01188811}{Link}
 \end{itemize}
 
 \hypertarget{project-2-vehicle-platooning}{%
 \chapter{Project 2: Vehicle
 Platooning}\label{project-2-vehicle-platooning}}
+
+The main objective of this project is to design a controller for a
+platoon of vehicles in order to optimize the flow and reduce the fuel
+consumption. A platoon of vehicles can be seen as:
 
 \hypertarget{objectives-1}{%
 \section*{Objectives}\label{objectives-1}}
@@ -405,15 +677,98 @@ This project consists in works based on \autocite{Grandinetti2015}
 \section*{Description}\label{description-1}}
 \addcontentsline{toc}{section}{Description}
 
+\hypertarget{task-1-platoon-modeling}{%
+\subsection*{Task 1: Platoon modeling}\label{task-1-platoon-modeling}}
+\addcontentsline{toc}{subsection}{Task 1: Platoon modeling}
+
+\hypertarget{context-5}{%
+\subsubsection*{Context}\label{context-5}}
+\addcontentsline{toc}{subsubsection}{Context}
+
+\hypertarget{questions-4}{%
+\subsubsection*{Questions}\label{questions-4}}
+\addcontentsline{toc}{subsubsection}{Questions}
+
+\hypertarget{expected-outcomes-4}{%
+\subsubsection*{Expected outcomes}\label{expected-outcomes-4}}
+\addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\hypertarget{task-2-open-loop-simulation}{%
+\subsection*{Task 2: Open loop
+simulation}\label{task-2-open-loop-simulation}}
+\addcontentsline{toc}{subsection}{Task 2: Open loop simulation}
+
+\hypertarget{context-6}{%
+\subsubsection*{Context}\label{context-6}}
+\addcontentsline{toc}{subsubsection}{Context}
+
+\hypertarget{questions-5}{%
+\subsubsection*{Questions}\label{questions-5}}
+\addcontentsline{toc}{subsubsection}{Questions}
+
+\hypertarget{expected-outcomes-5}{%
+\subsubsection*{Expected outcomes}\label{expected-outcomes-5}}
+\addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\begin{itemize}
+\tightlist
+\item
+  Obtain the trajectories for a platoon of 4 vehicles
+\end{itemize}
+
+\hypertarget{task-3-vehicle-platoon-control}{%
+\subsection*{Task 3: Vehicle platoon
+control}\label{task-3-vehicle-platoon-control}}
+\addcontentsline{toc}{subsection}{Task 3: Vehicle platoon control}
+
+\hypertarget{context-7}{%
+\subsubsection*{Context}\label{context-7}}
+\addcontentsline{toc}{subsubsection}{Context}
+
+\hypertarget{questions-6}{%
+\subsubsection*{Questions}\label{questions-6}}
+\addcontentsline{toc}{subsubsection}{Questions}
+
+\hypertarget{expected-outcomes-6}{%
+\subsubsection*{Expected outcomes}\label{expected-outcomes-6}}
+\addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\hypertarget{task-4-performance-evaluation-1}{%
+\subsection*{Task 4: Performance
+evaluation}\label{task-4-performance-evaluation-1}}
+\addcontentsline{toc}{subsection}{Task 4: Performance evaluation}
+
+\hypertarget{context-8}{%
+\subsubsection*{Context}\label{context-8}}
+\addcontentsline{toc}{subsubsection}{Context}
+
+\hypertarget{questions-7}{%
+\subsubsection*{Questions}\label{questions-7}}
+\addcontentsline{toc}{subsubsection}{Questions}
+
+\hypertarget{expected-outcomes-7}{%
+\subsubsection*{Expected outcomes}\label{expected-outcomes-7}}
+\addcontentsline{toc}{subsubsection}{Expected outcomes}
+
 \hypertarget{sources-1}{%
 \section*{Sources}\label{sources-1}}
 \addcontentsline{toc}{section}{Sources}
 
-The main reference for this work \autocite{Duret2019}
+\begin{itemize}
+\item
+  \href{https://github.com/aladinoster/density-reconstruction}{Simulation
+  results - Github}
+\item
+  Check \autocite{Duret2019} available
+  \href{http://bit.ly/Hierarchical_ISTTT}{Link}
+\end{itemize}
 
 \hypertarget{project-3-connected-vehicles}{%
 \chapter{Project 3: Connected
 Vehicles}\label{project-3-connected-vehicles}}
+
+This project is related to V2V modeling and the effects on the transport
+network. Let's consider first the work of
 
 \hypertarget{objectives-2}{%
 \section*{Objectives}\label{objectives-2}}
@@ -433,14 +788,7 @@ This project consists in works based on \autocite{Grandinetti2015}
 \chapter{Project 4: Density
 Reconstruction}\label{project-4-density-reconstruction}}
 
-\begin{figure}
-
-{\centering \includegraphics{images/03-density} 
-
-}
-
-\caption{(ref:denres)}\label{fig:denres}
-\end{figure}
+\includegraphics{images/p4-01-density.png}
 
 
 
@@ -477,25 +825,31 @@ Below is an \texttt{align} environment \eqref{eq:align}:
 \end{Shaded}
 
 \begin{align}
-g(X_{n}) &= g(\theta)+g'({\tilde{\theta}})(X_{n}-\theta) \notag \\
+g(X_{n}) &= g(\theta)+g'({\tilde{\theta}})(X_{n}-\theta)\\
 \sqrt{n}[g(X_{n})-g(\theta)] &= g'\left({\tilde{\theta}}\right)
   \sqrt{n}[X_{n}-\theta ] \label{eq:align}
 \end{align}
 
 \hypertarget{sources-3}{%
-\section{Sources}\label{sources-3}}
+\section*{Sources}\label{sources-3}}
+\addcontentsline{toc}{section}{Sources}
 
 For more details on the project please check:
 
 \begin{itemize}
-\tightlist
 \item
-  \href{https://github.com/aladinoster/density-reconstruction}{Traffic
-  Macrosimulator - Github}
+  \href{https://github.com/aladinoster/density-reconstruction}{Simulation
+  results - Github}
+\item
+  Check \autocite{Ladino2018} available
+  \href{https://hal.archives-ouvertes.fr/hal-01731356}{Link} and
+  \autocite{Lovisari2016}
+  \href{https://hal.archives-ouvertes.fr/hal-01375928}{Link}
 \end{itemize}
 
 \hypertarget{reference}{%
-\section{Reference}\label{reference}}
+\section*{Reference}\label{reference}}
+\addcontentsline{toc}{section}{Reference}
 
 The main reference for this project is \autocite{Ladino2018}
 

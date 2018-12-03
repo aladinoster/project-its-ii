@@ -17,4 +17,10 @@ bookdown::gitbook:
         twitter: yes
         linkedin: yes 
       lib_dir: "book_assets"  
-   
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: biblatex
+  keep_tex: yes
+bookdown::epub_book: default
