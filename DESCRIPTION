@@ -5,6 +5,7 @@ Version: 0.0.1
 Imports: 
   bookdown, 
   ggplot2,
-  tinytex
+  tinytex,
+  kinitr
 Remotes:
   aladinoster/project-its-ii
