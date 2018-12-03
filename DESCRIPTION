@@ -6,6 +6,6 @@ Imports:
   bookdown, 
   ggplot2,
   tinytex,
-  kinitr
+  knitr
 Remotes:
   aladinoster/project-its-ii
