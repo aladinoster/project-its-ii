@@ -1,9 +1,7 @@
 # Project 2: Vehicle Platooning
 
-The main objective of this project is to design a controller for a platoon of vehicles in order to optimize the flow 
-and reduce the fuel consumption. A platoon of vehicles can be seen as: 
-
-
+The objective of the current project is to regulate the spacing between two vehicles based on sensors installed
+within the vehicles. 
 
 
 ## Objectives {-}
