@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="project-1-signalized-traffic.html">
-<link rel="next" href="project-3-density-reconstruction.html">
+<link rel="prev" href="project-2-vehicle-platooning.html">
+<link rel="next" href="references.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -181,84 +181,53 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="project-2-vehicle-platooning" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Project 2: Vehicle Platooning</h1>
-<p>The objective of the current project is to regulate the spacing between two vehicles based on sensors installed
-within the vehicles.</p>
-<div id="objectives-1" class="section level2 unnumbered">
-<h2>Objectives</h2>
-<p>This project consists in works based on <span class="citation">(Grandinetti, Canudas-de-wit, and Garin <a href="#ref-Grandinetti2015">2015</a>)</span></p>
+<div id="project-3-density-reconstruction" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Project 3: Density Reconstruction</h1>
+<p><img src="images/p4-01-density.png" /></p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">plot</span>(cars)  <span class="co"># a scatterplot</span></a></code></pre></div>
+<div class="figure"><span id="fig:foo"></span>
+<img src="its-2-project_files/figure-html/foo-1.png" alt="A scatterplot of the data cars using base R graphics." width="672" />
+<p class="caption">
+Figure 3.1: A scatterplot of the data <code>cars</code> using <strong>base</strong> R graphics.
+</p>
 </div>
-<div id="description-1" class="section level2 unnumbered">
-<h2>Description</h2>
-<div id="task-1-platoon-modeling" class="section level3 unnumbered">
-<h3>Task 1: Platoon modeling</h3>
-<div id="context-5" class="section level4 unnumbered">
-<h4>Context</h4>
-</div>
-<div id="questions-4" class="section level4 unnumbered">
-<h4>Questions</h4>
-</div>
-<div id="expected-outcomes-4" class="section level4 unnumbered">
-<h4>Expected outcomes</h4>
-</div>
-</div>
-<div id="task-2-open-loop-simulation" class="section level3 unnumbered">
-<h3>Task 2: Open loop simulation</h3>
-<div id="context-6" class="section level4 unnumbered">
-<h4>Context</h4>
-</div>
-<div id="questions-5" class="section level4 unnumbered">
-<h4>Questions</h4>
-</div>
-<div id="expected-outcomes-5" class="section level4 unnumbered">
-<h4>Expected outcomes</h4>
-<ul>
-<li>Obtain the trajectories for a platoon of 4 vehicles</li>
-</ul>
-</div>
-</div>
-<div id="task-3-vehicle-platoon-control" class="section level3 unnumbered">
-<h3>Task 3: Vehicle platoon control</h3>
-<div id="context-7" class="section level4 unnumbered">
-<h4>Context</h4>
-</div>
-<div id="questions-6" class="section level4 unnumbered">
-<h4>Questions</h4>
-</div>
-<div id="expected-outcomes-6" class="section level4 unnumbered">
-<h4>Expected outcomes</h4>
-</div>
-</div>
-<div id="task-4-performance-evaluation-1" class="section level3 unnumbered">
-<h3>Task 4: Performance evaluation</h3>
-<div id="context-8" class="section level4 unnumbered">
-<h4>Context</h4>
-</div>
-<div id="questions-7" class="section level4 unnumbered">
-<h4>Questions</h4>
-</div>
-<div id="expected-outcomes-7" class="section level4 unnumbered">
-<h4>Expected outcomes</h4>
-</div>
-</div>
-</div>
-<div id="sources-1" class="section level2 unnumbered">
+<span class="math display" id="eq:binom">\[\begin{equation}
+f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \tag{3.1}
+\end{equation}\]</span>
+<p>In <a href="project-3-density-reconstruction.html#eq:binom">(3.1)</a></p>
+<p>Below is an <code>align</code> environment <a href="project-3-density-reconstruction.html#eq:align">(3.2)</a>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">\begin</span>{<span class="ex">align</span>}<span class="ss"> </span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="ss">g(X_{n}) &amp;= g(</span><span class="sc">\theta</span><span class="ss">)+g&#39;({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}})(X_{n}-</span><span class="sc">\theta</span><span class="ss">) </span><span class="sc">\notag</span><span class="ss"> </span><span class="sc">\\</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="sc">\sqrt</span><span class="ss">{n}[g(X_{n})-g(</span><span class="sc">\theta</span><span class="ss">)] &amp;= g&#39;</span><span class="sc">\left</span><span class="ss">({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}}</span><span class="sc">\right</span><span class="ss">)</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="ss">  </span><span class="sc">\sqrt</span><span class="ss">{n}[X_{n}-</span><span class="sc">\theta</span><span class="ss"> ] (</span><span class="sc">\#</span><span class="ss">eq:align)</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="kw">\end</span>{<span class="ex">align</span>} </a></code></pre></div>
+<span class="math display" id="eq:align">\[\begin{align}
+g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta)\\
+\sqrt{n}[g(X_{n})-g(\theta)] &amp;= g&#39;\left({\tilde{\theta}}\right)
+  \sqrt{n}[X_{n}-\theta ] \tag{3.2}
+\end{align}\]</span>
+<div id="sources-2" class="section level2 unnumbered">
 <h2>Sources</h2>
+<p>For more details on the project please check:</p>
 <ul>
 <li><p><a href="https://github.com/aladinoster/density-reconstruction">Simulation results - Github</a></p></li>
-<li><p>Check <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019">2019</a>)</span> available <a href="http://bit.ly/Hierarchical_ISTTT">Link</a></p></li>
+<li><p>Check <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span> available <a href="https://hal.archives-ouvertes.fr/hal-01731356">Link</a> and <span class="citation">(Lovisari, Canudas-de-wit, and Kibangou <a href="#ref-Lovisari2016">2016</a>)</span> <a href="https://hal.archives-ouvertes.fr/hal-01375928">Link</a></p></li>
 </ul>
+</div>
+<div id="reference" class="section level2 unnumbered">
+<h2>Reference</h2>
+<p>The main reference for this project is <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span></p>
 
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Grandinetti2015">
-<p>Grandinetti, Pietro, Carlos Canudas-de-wit, and Federica Garin. 2015. “An efficient one-step-ahead optimal control for urban signalized traffic networks based on an averaged Cell-Transmission Model.” In <em>2015 European Control Conference (Ecc)</em>, 3478–83. Vienna, Austria: IEEE. doi:<a href="https://doi.org/10.1109/ECC.2015.7331072">10.1109/ECC.2015.7331072</a>.</p>
+<div id="ref-Ladino2018">
+<p>Ladino, Andres, Carlos Canudas-de-wit, Alain Kibangou, Hassen Fourati, and Martin Rodriguez. 2018. “Density and flow reconstruction in urban traffic networks using heterogeneous data sources.” In <em>2018 European Control Conference, Ecc 2018</em>, edited by IEEE. Limasol, Chyprus.</p>
 </div>
-<div id="ref-Duret2019">
-<p>Duret, Aurelien, Meng Wang, and Andres Ladino. 2019. “A Hierarchical Approach for Splitting Truck Platoons Near Network Discontinuities.” <em>Submitted to 23rd International Symposium on Transportation and Traffic Theory</em>.</p>
+<div id="ref-Lovisari2016">
+<p>Lovisari, E., Carlos Canudas-de-wit, and Alain Y Kibangou. 2016. “Density/Flow reconstruction via heterogeneous sources and Optimal Sensor Placement in road networks.” <em>Transportation Research Part C: Emerging Technologies</em> 69. Elsevier Ltd: 451–76. doi:<a href="https://doi.org/10.1016/j.trc.2016.06.019">10.1016/j.trc.2016.06.019</a>.</p>
 </div>
 </div>
             </section>
@@ -266,8 +235,8 @@ within the vehicles.</p>
           </div>
         </div>
       </div>
-<a href="project-1-signalized-traffic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="project-3-density-reconstruction.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="project-2-vehicle-platooning.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -297,7 +266,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/aladinoster/project-its-ii/edit/master/03-vehicle-platoon.Rmd",
+"link": "https://github.com/aladinoster/project-its-ii/edit/master/04-density-estimate.Rmd",
 "text": "Edit"
 },
 "download": ["its-2-project.epub"],
