@@ -51,7 +51,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -64,13 +64,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -255,7 +253,7 @@ and reduce the fuel consumption. A platoon of vehicles can be seen as:</p>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Grandinetti2015">
-<p>Grandinetti, Pietro, Carlos Canudas-de-wit, and Federica Garin. 2015. “An efficient one-step-ahead optimal control for urban signalized traffic networks based on an averaged Cell-Transmission Model.” In <em>2015 European Control Conference (Ecc)</em>, 3478–83. Vienna, Austria: IEEE. doi:<a href="https://doi.org/10.1109/ECC.2015.7331072">10.1109/ECC.2015.7331072</a>.</p>
+<p>Grandinetti, Pietro, Carlos Canudas-de-wit, and Federica Garin. 2015. “An efficient one-step-ahead optimal control for urban signalized traffic networks based on an averaged Cell-Transmission Model.” In <em>2015 European Control Conference (Ecc)</em>, 3478–83. Vienna, Austria: IEEE. <a href="https://doi.org/10.1109/ECC.2015.7331072">https://doi.org/10.1109/ECC.2015.7331072</a>.</p>
 </div>
 <div id="ref-Duret2019">
 <p>Duret, Aurelien, Meng Wang, and Andres Ladino. 2019. “A Hierarchical Approach for Splitting Truck Platoons Near Network Discontinuities.” <em>Submitted to 23rd International Symposium on Transportation and Traffic Theory</em>.</p>
@@ -300,7 +298,7 @@ gitbook.start({
 "link": "https://github.com/aladinoster/project-its-ii/edit/gh-pages/03-vehicle-platoon.Rmd",
 "text": "Edit"
 },
-"download": ["its-2-project.epub"],
+"download": ["its-2-project.pdf", "its-2-project.epub"],
 "toc": {
 "collapse": "section",
 "edit": "https://github.com/aladinoster/project-its-ii/edit/master/%s",

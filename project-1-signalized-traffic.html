@@ -51,7 +51,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -64,13 +64,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -275,9 +273,9 @@ Figure 1.3: Demand profiles for a specified scenario.
 <div id="context-3" class="section level4 unnumbered">
 <h4>Context</h4>
 <p>For the Figure <a href="project-1-signalized-traffic.html#fig:tlight">1.1</a> the average value can be found as:</p>
-<span class="math display" id="eq:avgu">\[\begin{equation}
+<p><span class="math display" id="eq:avgu">\[\begin{equation}
 \bar{u} = \frac{1}{T}\int_0^T u(\tau) d\tau \tag{1.1}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>As it is illustrated in <span class="citation">(Grandinetti, Garin, and Canudas-de-wit <a href="#ref-Grandinetti2016">2015</a>)</span>, in Eq. <a href="project-1-signalized-traffic.html#eq:avgu">(1.1)</a> is easier to design a value for <span class="math inline">\(\bar{u}\)</span> rather than <span class="math inline">\(u\)</span> due to its binary character.</p>
 </div>
 <div id="questions-2" class="section level4 unnumbered">
@@ -303,13 +301,13 @@ Figure 1.3: Demand profiles for a specified scenario.
 <div id="context-4" class="section level4 unnumbered">
 <h4>Context</h4>
 <p>Indicators for traffic networks are regularly expressed in terms of the state of the network, for example the <em>Service of Demand</em> (SoD) measured in terms of flow:</p>
-<span class="math display" id="eq:sod">\[\begin{equation}
+<p><span class="math display" id="eq:sod">\[\begin{equation}
 SOD = \int_0^T \sum_{r \in R} f_r(\tau) d\tau \tag{1.2}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>Or the <em>Total Travel Distance</em> (TTD) measured in terms of the density</p>
-<span class="math display" id="eq:ttd">\[\begin{equation}
+<p><span class="math display" id="eq:ttd">\[\begin{equation}
 TTD = \int_0^T \sum_{r \in R} \rho_r(\tau) d\tau \tag{1.3}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 </div>
 <div id="questions-3" class="section level4 unnumbered">
 <h4>Questions</h4>
@@ -340,13 +338,13 @@ TTD = \int_0^T \sum_{r \in R} \rho_r(\tau) d\tau \tag{1.3}
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Grandinetti2015">
-<p>Grandinetti, Pietro, Carlos Canudas-de-wit, and Federica Garin. 2015. “An efficient one-step-ahead optimal control for urban signalized traffic networks based on an averaged Cell-Transmission Model.” In <em>2015 European Control Conference (Ecc)</em>, 3478–83. Vienna, Austria: IEEE. doi:<a href="https://doi.org/10.1109/ECC.2015.7331072">10.1109/ECC.2015.7331072</a>.</p>
+<p>Grandinetti, Pietro, Carlos Canudas-de-wit, and Federica Garin. 2015. “An efficient one-step-ahead optimal control for urban signalized traffic networks based on an averaged Cell-Transmission Model.” In <em>2015 European Control Conference (Ecc)</em>, 3478–83. Vienna, Austria: IEEE. <a href="https://doi.org/10.1109/ECC.2015.7331072">https://doi.org/10.1109/ECC.2015.7331072</a>.</p>
 </div>
 <div id="ref-Grandinetti2016">
-<p>Grandinetti, Pietro, Federica Garin, and Carlos Canudas-de-wit. 2015. “Towards scalable optimal traffic control.” In <em>54th IEEE Conference on Decision and Control (CDC 2015)</em>. Osaka, Japan. <a href="https://hal.archives-ouvertes.fr/hal-01188811" class="uri">https://hal.archives-ouvertes.fr/hal-01188811</a>.</p>
+<p>Grandinetti, Pietro, Federica Garin, and Carlos Canudas-de-wit. 2015. “Towards scalable optimal traffic control.” In <em>54th IEEE Conference on Decision and Control (CDC 2015)</em>. Osaka, Japan. <a href="https://hal.archives-ouvertes.fr/hal-01188811">https://hal.archives-ouvertes.fr/hal-01188811</a>.</p>
 </div>
 <div id="ref-Varaiya2013:TR-C">
-<p>Varaiya, Pravin. 2013. “Max pressure control of a network of signalized intersections.” <em>Transportation Research Part C: Emerging Technologies</em> 36 (2). Elsevier Ltd: 177–95. doi:<a href="https://doi.org/10.1016/j.trc.2013.08.014">10.1016/j.trc.2013.08.014</a>.</p>
+<p>Varaiya, Pravin. 2013. “Max pressure control of a network of signalized intersections.” <em>Transportation Research Part C: Emerging Technologies</em> 36 (2): 177–95. <a href="https://doi.org/10.1016/j.trc.2013.08.014">https://doi.org/10.1016/j.trc.2013.08.014</a>.</p>
 </div>
 </div>
             </section>
@@ -388,7 +386,7 @@ gitbook.start({
 "link": "https://github.com/aladinoster/project-its-ii/edit/gh-pages/02-signal-traffic.Rmd",
 "text": "Edit"
 },
-"download": ["its-2-project.epub"],
+"download": ["its-2-project.pdf", "its-2-project.epub"],
 "toc": {
 "collapse": "section",
 "edit": "https://github.com/aladinoster/project-its-ii/edit/master/%s",

@@ -51,7 +51,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -64,13 +64,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -185,28 +183,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> Project 4: Density Reconstruction</h1>
 <p><img src="images/p4-01-density.png" /></p>
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">plot</span>(cars)  <span class="co"># a scatterplot</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">plot</span>(cars)  <span class="co"># a scatterplot</span></a></code></pre></div>
 <div class="figure"><span id="fig:foo"></span>
 <img src="its-2-project_files/figure-html/foo-1.png" alt="A scatterplot of the data cars using base R graphics." width="672" />
 <p class="caption">
 Figure 3.1: A scatterplot of the data <code>cars</code> using <strong>base</strong> R graphics.
 </p>
 </div>
-<span class="math display" id="eq:binom">\[\begin{equation}
+<p><span class="math display" id="eq:binom">\[\begin{equation}
 f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \tag{3.1}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>In <a href="project-4-density-reconstruction.html#eq:binom">(3.1)</a></p>
 <p>Below is an <code>align</code> environment <a href="project-4-density-reconstruction.html#eq:align">(3.2)</a>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">\begin</span>{<span class="ex">align</span>}<span class="ss"> </span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="ss">g(X_{n}) &amp;= g(</span><span class="sc">\theta</span><span class="ss">)+g&#39;({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}})(X_{n}-</span><span class="sc">\theta</span><span class="ss">) </span><span class="sc">\notag</span><span class="ss"> </span><span class="sc">\\</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="sc">\sqrt</span><span class="ss">{n}[g(X_{n})-g(</span><span class="sc">\theta</span><span class="ss">)] &amp;= g&#39;</span><span class="sc">\left</span><span class="ss">({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}}</span><span class="sc">\right</span><span class="ss">)</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="ss">  </span><span class="sc">\sqrt</span><span class="ss">{n}[X_{n}-</span><span class="sc">\theta</span><span class="ss"> ] (</span><span class="sc">\#</span><span class="ss">eq:align)</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="kw">\end</span>{<span class="ex">align</span>} </a></code></pre></div>
-<span class="math display" id="eq:align">\[\begin{align}
+<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">\begin</span>{<span class="ex">align</span>}<span class="ss"> </span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="ss">g(X_{n}) &amp;= g(</span><span class="sc">\theta</span><span class="ss">)+g&#39;({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}})(X_{n}-</span><span class="sc">\theta</span><span class="ss">) </span><span class="sc">\notag</span><span class="ss"> </span><span class="sc">\\</span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="sc">\sqrt</span><span class="ss">{n}[g(X_{n})-g(</span><span class="sc">\theta</span><span class="ss">)] &amp;= g&#39;</span><span class="sc">\left</span><span class="ss">({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}}</span><span class="sc">\right</span><span class="ss">)</span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="ss">  </span><span class="sc">\sqrt</span><span class="ss">{n}[X_{n}-</span><span class="sc">\theta</span><span class="ss"> ] (</span><span class="sc">\#</span><span class="ss">eq:align)</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="kw">\end</span>{<span class="ex">align</span>} </a></code></pre></div>
+<p><span class="math display" id="eq:align">\[\begin{align}
 g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta)\\
 \sqrt{n}[g(X_{n})-g(\theta)] &amp;= g&#39;\left({\tilde{\theta}}\right)
   \sqrt{n}[X_{n}-\theta ] \tag{3.2}
-\end{align}\]</span>
+\end{align}\]</span></p>
 <div id="sources-2" class="section level2 unnumbered">
 <h2>Sources</h2>
 <p>For more details on the project please check:</p>
@@ -227,7 +225,7 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta)\\
 <p>Ladino, Andres, Carlos Canudas-de-wit, Alain Kibangou, Hassen Fourati, and Martin Rodriguez. 2018. “Density and flow reconstruction in urban traffic networks using heterogeneous data sources.” In <em>2018 European Control Conference, Ecc 2018</em>, edited by IEEE. Limasol, Chyprus.</p>
 </div>
 <div id="ref-Lovisari2016">
-<p>Lovisari, E., Carlos Canudas-de-wit, and Alain Y Kibangou. 2016. “Density/Flow reconstruction via heterogeneous sources and Optimal Sensor Placement in road networks.” <em>Transportation Research Part C: Emerging Technologies</em> 69. Elsevier Ltd: 451–76. doi:<a href="https://doi.org/10.1016/j.trc.2016.06.019">10.1016/j.trc.2016.06.019</a>.</p>
+<p>Lovisari, E., Carlos Canudas-de-wit, and Alain Y Kibangou. 2016. “Density/Flow reconstruction via heterogeneous sources and Optimal Sensor Placement in road networks.” <em>Transportation Research Part C: Emerging Technologies</em> 69: 451–76. <a href="https://doi.org/10.1016/j.trc.2016.06.019">https://doi.org/10.1016/j.trc.2016.06.019</a>.</p>
 </div>
 </div>
             </section>
@@ -269,7 +267,7 @@ gitbook.start({
 "link": "https://github.com/aladinoster/project-its-ii/edit/gh-pages/04-density-estimate.Rmd",
 "text": "Edit"
 },
-"download": ["its-2-project.epub"],
+"download": ["its-2-project.pdf", "its-2-project.epub"],
 "toc": {
 "collapse": "section",
 "edit": "https://github.com/aladinoster/project-its-ii/edit/master/%s",

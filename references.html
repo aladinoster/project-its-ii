@@ -51,7 +51,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -64,13 +64,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -189,19 +187,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Duret, Aurelien, Meng Wang, and Andres Ladino. 2019. “A Hierarchical Approach for Splitting Truck Platoons Near Network Discontinuities.” <em>Submitted to 23rd International Symposium on Transportation and Traffic Theory</em>.</p>
 </div>
 <div>
-<p>Grandinetti, Pietro, Carlos Canudas-de-wit, and Federica Garin. 2015. “An efficient one-step-ahead optimal control for urban signalized traffic networks based on an averaged Cell-Transmission Model.” In <em>2015 European Control Conference (Ecc)</em>, 3478–83. Vienna, Austria: IEEE. doi:<a href="https://doi.org/10.1109/ECC.2015.7331072">10.1109/ECC.2015.7331072</a>.</p>
+<p>Grandinetti, Pietro, Carlos Canudas-de-wit, and Federica Garin. 2015. “An efficient one-step-ahead optimal control for urban signalized traffic networks based on an averaged Cell-Transmission Model.” In <em>2015 European Control Conference (Ecc)</em>, 3478–83. Vienna, Austria: IEEE. <a href="https://doi.org/10.1109/ECC.2015.7331072">https://doi.org/10.1109/ECC.2015.7331072</a>.</p>
 </div>
 <div>
-<p>Grandinetti, Pietro, Federica Garin, and Carlos Canudas-de-wit. 2015. “Towards scalable optimal traffic control.” In <em>54th IEEE Conference on Decision and Control (CDC 2015)</em>. Osaka, Japan. <a href="https://hal.archives-ouvertes.fr/hal-01188811" class="uri">https://hal.archives-ouvertes.fr/hal-01188811</a>.</p>
+<p>Grandinetti, Pietro, Federica Garin, and Carlos Canudas-de-wit. 2015. “Towards scalable optimal traffic control.” In <em>54th IEEE Conference on Decision and Control (CDC 2015)</em>. Osaka, Japan. <a href="https://hal.archives-ouvertes.fr/hal-01188811">https://hal.archives-ouvertes.fr/hal-01188811</a>.</p>
 </div>
 <div>
 <p>Ladino, Andres, Carlos Canudas-de-wit, Alain Kibangou, Hassen Fourati, and Martin Rodriguez. 2018. “Density and flow reconstruction in urban traffic networks using heterogeneous data sources.” In <em>2018 European Control Conference, Ecc 2018</em>, edited by IEEE. Limasol, Chyprus.</p>
 </div>
 <div>
-<p>Lovisari, E., Carlos Canudas-de-wit, and Alain Y Kibangou. 2016. “Density/Flow reconstruction via heterogeneous sources and Optimal Sensor Placement in road networks.” <em>Transportation Research Part C: Emerging Technologies</em> 69. Elsevier Ltd: 451–76. doi:<a href="https://doi.org/10.1016/j.trc.2016.06.019">10.1016/j.trc.2016.06.019</a>.</p>
+<p>Lovisari, E., Carlos Canudas-de-wit, and Alain Y Kibangou. 2016. “Density/Flow reconstruction via heterogeneous sources and Optimal Sensor Placement in road networks.” <em>Transportation Research Part C: Emerging Technologies</em> 69: 451–76. <a href="https://doi.org/10.1016/j.trc.2016.06.019">https://doi.org/10.1016/j.trc.2016.06.019</a>.</p>
 </div>
 <div>
-<p>Varaiya, Pravin. 2013. “Max pressure control of a network of signalized intersections.” <em>Transportation Research Part C: Emerging Technologies</em> 36 (2). Elsevier Ltd: 177–95. doi:<a href="https://doi.org/10.1016/j.trc.2013.08.014">10.1016/j.trc.2013.08.014</a>.</p>
+<p>Varaiya, Pravin. 2013. “Max pressure control of a network of signalized intersections.” <em>Transportation Research Part C: Emerging Technologies</em> 36 (2): 177–95. <a href="https://doi.org/10.1016/j.trc.2013.08.014">https://doi.org/10.1016/j.trc.2013.08.014</a>.</p>
 </div>
 </div>
 </div>
@@ -244,7 +242,7 @@ gitbook.start({
 "link": "https://github.com/aladinoster/project-its-ii/edit/gh-pages/05-references.Rmd",
 "text": "Edit"
 },
-"download": ["its-2-project.epub"],
+"download": ["its-2-project.pdf", "its-2-project.epub"],
 "toc": {
 "collapse": "section",
 "edit": "https://github.com/aladinoster/project-its-ii/edit/master/%s",
