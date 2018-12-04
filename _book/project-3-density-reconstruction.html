@@ -166,7 +166,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#task-4-estimation-performance"><i class="fa fa-check"></i>Task 4: Estimation performance</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#sources-2"><i class="fa fa-check"></i>Sources</a></li>
-<li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#reference"><i class="fa fa-check"></i>Reference</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -211,11 +210,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <div id="task-1-modeling-1" class="section level3 unnumbered">
 <h3>Task 1: Modeling</h3>
+<p>Consider reading <span class="citation">(Daganzo <a href="#ref-Daganzo1994:TR-B">1994</a>)</span> to understand the first basic principles and <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span> for more details about the network problem.</p>
 <div id="context-9" class="section level4 unnumbered">
 <h4>Context</h4>
+<p>In order to reconstruct the traffic models for this project it is important to understand the principle of demand supply prescribed in the <em>Cell Transmission Model (CTM)</em> <span class="citation">(Daganzo <a href="#ref-Daganzo1994:TR-B">1994</a>)</span> and its extensions to the network case <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span>.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:fdiag"></span>
+<img src="its-2-project_files/figure-html/fdiag-1.png" alt="Demand/Supply Principle." width="336" />
+<p class="caption">
+Figure 9: Demand/Supply Principle.
+</p>
+</div>
+<p>Within the Figure <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span> the <em>red</em> curve represnets the <em>demand</em> of a link and the <em>blue</em> curve represents the <em>supply</em> of the link. The main objective is to model the fixed capacity of the flow. In this approach the blue line is determined by information <em>downstream</em> the network while the red line is determined by information <em>upstream</em>.</p>
 </div>
 <div id="questions-8" class="section level4 unnumbered">
 <h4>Questions</h4>
+<ul>
+<li>Which is the actual model of</li>
+</ul>
 </div>
 <div id="expected-outcomes-8" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
@@ -263,7 +275,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="figure"><span id="fig:foo"></span>
 <img src="its-2-project_files/figure-html/foo-1.png" alt="A scatterplot of the data cars using base R graphics." width="672" />
 <p class="caption">
-Figure 9: A scatterplot of the data <code>cars</code> using <strong>base</strong> R graphics.
+Figure 10: A scatterplot of the data <code>cars</code> using <strong>base</strong> R graphics.
 </p>
 </div>
 <p><span class="math display" id="eq:binom">\[\begin{equation}
@@ -289,12 +301,8 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta)\\
 <p>For more details on the project please check:</p>
 <ul>
 <li><p><a href="https://github.com/aladinoster/density-reconstruction">Simulation results - Github</a></p></li>
-<li><p>Check <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span> available <a href="https://hal.archives-ouvertes.fr/hal-01731356">Link</a> and <span class="citation">(Lovisari, Canudas-de-wit, and Kibangou <a href="#ref-Lovisari2016">2016</a>)</span> <a href="https://hal.archives-ouvertes.fr/hal-01375928">Link</a></p></li>
+<li><p>Check <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span> available at <a href="https://hal.archives-ouvertes.fr/hal-01731356">Link</a> and <span class="citation">(Lovisari, Canudas-de-wit, and Kibangou <a href="#ref-Lovisari2016">2016</a>)</span> available at <a href="https://hal.archives-ouvertes.fr/hal-01375928">Link</a></p></li>
 </ul>
-</div>
-<div id="reference" class="section level2 unnumbered">
-<h2>Reference</h2>
-<p>The main reference for this project is <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span></p>
 
 </div>
 </div>
@@ -305,6 +313,9 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta)\\
 </div>
 <div id="ref-Ladino2018">
 <p>Ladino, Andres, Carlos Canudas-de-wit, Alain Kibangou, Hassen Fourati, and Martin Rodriguez. 2018. “Density and flow reconstruction in urban traffic networks using heterogeneous data sources.” In <em>2018 European Control Conference, Ecc 2018</em>, edited by IEEE. Limasol, Chyprus.</p>
+</div>
+<div id="ref-Daganzo1994:TR-B">
+<p>Daganzo, Carlos F. 1994. “The cell transmission model: A dynamic representation of highway traffic consistent with the hydrodynamic theory.” <em>Transportation Research Part B</em> 28 (4): 269–87. <a href="https://doi.org/10.1016/0191-2615(94)90002-7">https://doi.org/10.1016/0191-2615(94)90002-7</a>.</p>
 </div>
 </div>
             </section>
