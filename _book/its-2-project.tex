@@ -919,13 +919,16 @@ terms of accelerations of vehicles as shown in the Figure
 \tightlist
 \item
   Provide the dynamical response of the open-loop (headway space/speed)
-  system.
+  system, (all headway spacings/ speed profiles) to a change in
+  decceleration of \(0.1m/s^2\), applied over 1s.\\
 \item
   Provide the dynamical response of the closed-loop (headway
-  space/speed) system.
+  space/speed) system, (all headway spacings/ speed profiles) to a
+  change in spacing of \(5m\).
 \item
   Compare the situations and conclude about the implementation of
-  control systems on vehicle automatization.
+  control systems on vehicle automatization. What are the benefits of
+  implementing this type of algorithms?
 \end{itemize}
 
 \hypertarget{task-4-performance-evaluation-1}{%
@@ -937,21 +940,60 @@ evaluation}\label{task-4-performance-evaluation-1}}
 \subsubsection*{Context}\label{context-8}}
 \addcontentsline{toc}{subsubsection}{Context}
 
+In order to provide a final evaluation it is important to measure the
+dynamical performance of the control strategy. This dynamical response
+can be measured as in \ref{fig:dynamic2}.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics{images/p2-04-evaluation} 
+
+}
+
+\caption{Typical dynamical response for a 2nd order model}\label{fig:dynamic2}
+\end{figure}
+
 \hypertarget{questions-7}{%
 \subsubsection*{Questions}\label{questions-7}}
 \addcontentsline{toc}{subsubsection}{Questions}
+
+\begin{itemize}
+\tightlist
+\item
+  Measure the dynamical response, setting time, rise time for the
+  controller operated on the 2nd order model and 3rd order model. What
+  can you conclude about the dynamical step response?
+\item
+  Provide a variation of parameters in the contoller provided. How the
+  parameters may affect the stability of the model?
+\end{itemize}
 
 \hypertarget{expected-outcomes-7}{%
 \subsubsection*{Expected outcomes}\label{expected-outcomes-7}}
 \addcontentsline{toc}{subsubsection}{Expected outcomes}
 
+\begin{itemize}
+\tightlist
+\item
+  Provide an analysis from values obtained of simulations of the same
+  control for multiple models (2nd/3rd order).
+\item
+  Construct and determine the effects of modifying control parameters
+  when they are applied to multiple models.
+\end{itemize}
+
 \hypertarget{sources-1}{%
 \section*{Sources}\label{sources-1}}
 \addcontentsline{toc}{section}{Sources}
 
+For more details on how to deploy traffic simulations and traffic models
+please check:
+
 \begin{itemize}
 \item
-  \href{https://github.com/aladinoster/density-reconstruction}{Simulation
+  \href{https://github.com/research-licit/Hierarchical-Platooning/blob/dev/Operational/platoon-closed-3rd.py}{Simulation
   results - Github}
 \item
   Check (Duret, Wang, and Ladino

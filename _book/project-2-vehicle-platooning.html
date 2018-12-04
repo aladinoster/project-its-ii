@@ -287,9 +287,10 @@ Figure 7: Closed loop system.
 <div id="expected-outcomes-6" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
 <ul>
-<li>Provide the dynamical response of the open-loop (headway space/speed) system.</li>
-<li>Provide the dynamical response of the closed-loop (headway space/speed) system.</li>
-<li>Compare the situations and conclude about the implementation of control systems on vehicle automatization.</li>
+<li>Provide the dynamical response of the open-loop (headway space/speed) system, (all headway spacings/ speed profiles) to a change in decceleration of <span class="math inline">\(0.1m/s^2\)</span>, applied over 1s.<br />
+</li>
+<li>Provide the dynamical response of the closed-loop (headway space/speed) system, (all headway spacings/ speed profiles) to a change in spacing of <span class="math inline">\(5m\)</span>.</li>
+<li>Compare the situations and conclude about the implementation of control systems on vehicle automatization. What are the benefits of implementing this type of algorithms?</li>
 </ul>
 </div>
 </div>
@@ -297,19 +298,36 @@ Figure 7: Closed loop system.
 <h3>Task 4: Performance evaluation</h3>
 <div id="context-8" class="section level4 unnumbered">
 <h4>Context</h4>
+<p>In order to provide a final evaluation it is important to measure the dynamical performance of the control strategy. This dynamical response can be measured as in <a href="project-2-vehicle-platooning.html#fig:dynamic2">8</a>.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:dynamic2"></span>
+<img src="images/p2-04-evaluation.png" alt="Typical dynamical response for a 2nd order model"  />
+<p class="caption">
+Figure 8: Typical dynamical response for a 2nd order model
+</p>
+</div>
 </div>
 <div id="questions-7" class="section level4 unnumbered">
 <h4>Questions</h4>
+<ul>
+<li>Measure the dynamical response, setting time, rise time for the controller operated on the 2nd order model and 3rd order model. What can you conclude about the dynamical step response?</li>
+<li>Provide a variation of parameters in the contoller provided. How the parameters may affect the stability of the model?</li>
+</ul>
 </div>
 <div id="expected-outcomes-7" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
+<ul>
+<li>Provide an analysis from values obtained of simulations of the same control for multiple models (2nd/3rd order).</li>
+<li>Construct and determine the effects of modifying control parameters when they are applied to multiple models.</li>
+</ul>
 </div>
 </div>
 </div>
 <div id="sources-1" class="section level2 unnumbered">
 <h2>Sources</h2>
+<p>For more details on how to deploy traffic simulations and traffic models please check:</p>
 <ul>
-<li><p><a href="https://github.com/aladinoster/density-reconstruction">Simulation results - Github</a></p></li>
+<li><p><a href="https://github.com/research-licit/Hierarchical-Platooning/blob/dev/Operational/platoon-closed-3rd.py">Simulation results - Github</a></p></li>
 <li><p>Check <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019">2019</a><a href="#ref-Duret2019">b</a>)</span> available <a href="http://bit.ly/Hierarchical_ISTTT">Link</a></p></li>
 </ul>
 

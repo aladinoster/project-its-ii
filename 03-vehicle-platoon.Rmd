@@ -97,20 +97,38 @@ knitr::include_graphics("images/p2-03-closed-loop.png")
 
 #### Expected outcomes {-}
 
-* Provide the dynamical response of the open-loop (headway space/speed) system. 
-* Provide the dynamical response of the closed-loop (headway space/speed) system.
-* Compare the situations and conclude about the implementation of control systems on vehicle automatization. 
+* Provide the dynamical response of the open-loop (headway space/speed) system, (all headway spacings/ speed profiles) to a change in decceleration of $0.1m/s^2$, applied over 1s.  
+* Provide the dynamical response of the closed-loop (headway space/speed) system,  (all headway spacings/ speed profiles) to a change in spacing of $5m$. 
+* Compare the situations and conclude about the implementation of control systems on vehicle automatization. What are the benefits of implementing this type of algorithms? 
 
 ### Task 4: Performance evaluation {-}
 
 #### Context {-}
 
+In order to provide a final evaluation it is important to measure the dynamical performance of the control strategy. This dynamical response can be measured as in \@ref(fig:dynamic2).
+
+(ref:dynamic2) Typical dynamical response for a 2nd order model
+
+```{r dynamic2, fig.cap='(ref:dynamic2)', fig.align = 'center', fig.width = 4, echo= FALSE}
+knitr::include_graphics("images/p2-04-evaluation.png")
+```
+
 #### Questions {-}
+
+* Measure the dynamical response, setting time, rise time for the controller operated on the 2nd order model and 3rd order model. What can you conclude about the dynamical step response?
+* Provide a variation of parameters in the contoller provided. How the parameters may affect the stability of the model? 
 
 #### Expected outcomes {-}
 
+* Provide an analysis from values obtained of simulations of the same control for multiple models (2nd/3rd order).
+* Construct and determine the effects of modifying control parameters when they are applied to multiple models. 
+
 ## Sources {-}
 
-- [Simulation results - Github](https://github.com/aladinoster/density-reconstruction)
+For more details on how to deploy traffic simulations and traffic models please check:
+
+- [Simulation results - Github](https://github.com/research-licit/Hierarchical-Platooning/blob/dev/Operational/platoon-closed-3rd.py)
 
 - Check [@Duret2019] available [Link](http://bit.ly/Hierarchical_ISTTT)
+
+
