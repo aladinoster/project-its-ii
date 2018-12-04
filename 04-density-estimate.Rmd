@@ -26,9 +26,34 @@ The main objective of this project is to:
 
 ### Task 1: Modeling {-}
 
+Consider reading [@Daganzo1994:TR-B] to understand the first basic principles and [@Ladino2018] for more details about the network problem. 
+
 #### Context {-}
 
+In order to reconstruct the traffic models for this project it is important to understand the principle of demand supply prescribed in the *Cell Transmission Model (CTM)* [@Daganzo1994:TR-B] and its extensions to the network case [@Ladino2018].
+
+(ref:fdiag) Demand/Supply Principle. 
+
+```{r fdiag, fig.cap='(ref:fdiag)', fig.align = 'center', fig.width = 3.5, fig.asp= 0.7, echo= FALSE}
+library(ggplot2)
+N <- 0.1 # sampling 
+x <- seq(from = 0,  to = 1,  by = N)
+
+y1 <- pmin(x, 0.5)
+y2 <- pmin(0.5, -x+1)
+Demand <- data.frame(c(list(x),list(y1)))
+Supply <- data.frame(c(list(x),list(y2)))
+names(Demand) <- c("Density", "Flow")
+names(Supply) <- c("Density", "Flow")
+ggplot(data=Demand,aes(x=Density,y=Flow))+geom_line(color='red', show.legend = TRUE)+ 
+  geom_line(data = Supply, color='blue',show.legend = TRUE) 
+```
+
+Within the Figure [@Ladino2018] the *red* curve represnets the *demand* of a link and the *blue* curve represents the *supply* of the link. The main objective is to model the fixed capacity of the flow. In this approach the blue line is determined by information *downstream* the network while the red line is determined by information *upstream*.   
+
 #### Questions {-}
+
+* Which is the actual model of
 
 #### Expected outcomes {-}
 
@@ -100,8 +125,5 @@ For more details on the project please check:
 
 - [Simulation results - Github](https://github.com/aladinoster/density-reconstruction)
 
-- Check [@Ladino2018] available [Link](https://hal.archives-ouvertes.fr/hal-01731356) and [@Lovisari2016] [Link](https://hal.archives-ouvertes.fr/hal-01375928)
+- Check [@Ladino2018] available at [Link](https://hal.archives-ouvertes.fr/hal-01731356) and [@Lovisari2016] available at [Link](https://hal.archives-ouvertes.fr/hal-01375928)
 
-## Reference {-}
-
-The main reference for this project is [@Ladino2018]
