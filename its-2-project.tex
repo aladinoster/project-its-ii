@@ -33,46 +33,6 @@
             urlcolor=Blue,
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -1187,21 +1147,69 @@ line is determined by information \emph{upstream}.
 
 Dynamic simulation of open loop traffic networks. For this task be sure
 to review already implemented simulations available at
-\href{https://github.com/andres-ladino-ifsttar/traffic-macrosimulator}{Link}.
-Get familiar with the code here developed before you enter into details
-of implementation.
+\href{https://github.com/aladinoster/density-reconstruction}{Link}. Get
+familiar with the code here developed before you enter into details of
+implementation.
 
 \hypertarget{context-10}{%
 \subsubsection*{Context}\label{context-10}}
 \addcontentsline{toc}{subsubsection}{Context}
 
+In order to implement the model of the network that will help the
+reconstruction algorithm, please consider
+
+\begin{align}
+\rho(k+1) = \rho(k) + (R^T - I)\varphi^{out}(t) + \varphi^{ext}(t) \label{eq:lwr}
+\end{align}
+
+where in particular \(\varphi^{out}(k)\) is found:
+
+\begin{align}
+\underset{\varphi^{out}}{\max} \sum_i \varphi^{out}_i\quad \text{s.t}\quad \varphi^{out} \in \mathcal{P}
+\end{align}
+
 \hypertarget{questions-9}{%
 \subsubsection*{Questions}\label{questions-9}}
 \addcontentsline{toc}{subsubsection}{Questions}
 
+\begin{itemize}
+\tightlist
+\item
+  Design and create a simulation of the traffic network for the case in
+  which the value of splitting ratio is \(0.6\) if the flow follows the
+  straight direction and the rest of the percentage divides equally for
+  turning directions. Select in this case fixed values of demand. What
+  are the values of density and
+\item
+  Verify the equilibrium condition on the network, see more details in
+  (Ladino et al. \protect\hyperlink{ref-Ladino2018}{2018}). Does it
+  holds for the particular value? For this purpose initialize the
+  traffic evolution from different initial conditions and constant
+  values of demand, how long does the network takes to reach
+  equilibrium?
+\item
+  Add a random noise \(\sim \mathcal{N}(0,0.1)\) to each one of the
+  splitting ratios within the network. How
+\end{itemize}
+
 \hypertarget{expected-outcomes-9}{%
 \subsubsection*{Expected outcomes}\label{expected-outcomes-9}}
 \addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\begin{itemize}
+\item
+  Present the dynamic profiles for density on each one of the roads
+  under different setups of traffic lights. The dynamic profiles should
+  specify density per road in time
+\item
+  Provide comparisons between different traffic models with and without
+  noise in the parameters and an analysis on how this error evolves
+  according to different values of demand.
+\item
+  Initialize the simulation from different initial conditions and
+  constant values of demand. And obtain the equilibrium points of the
+  network, determine also the time to reach this equilibrium values.
+\end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -1214,13 +1222,64 @@ algorithm}\label{task-3-estimation-algorithm}}
 \subsubsection*{Context}\label{context-11}}
 \addcontentsline{toc}{subsubsection}{Context}
 
+Two different reconstruction algorithms have been proposed in (Lovisari,
+Canudas-de-wit, and Kibangou \protect\hyperlink{ref-Lovisari2016}{2016})
+and (Ladino et al. \protect\hyperlink{ref-Ladino2018}{2018}), both of
+them follow the principle of accounting for speed and flow measurements
+in order to retrieve the state of the network. Please exam these works
+before implementing the estimation algorithm.
+
+The estimation technique can be reduced to the solution of the following
+optimal problem
+
+\begin{align}
+\underset{\rho,\varphi}{\min} \|C\varphi - \bar{\varphi}\|^2 + \|S(\rho - \Psi^{-1}(v))\|^2 +  \|(R^T-I)\varphi +\varphi^{ext}\|^2\quad \text{s.t}\quad \varphi \in \mathcal{P}_\varphi, \rho \in \mathcal{P}_\rho
+\end{align}
+
 \hypertarget{questions-10}{%
 \subsubsection*{Questions}\label{questions-10}}
 \addcontentsline{toc}{subsubsection}{Questions}
 
+\begin{itemize}
+\tightlist
+\item
+  What are the differences between the algorithms proposed in (Lovisari,
+  Canudas-de-wit, and Kibangou
+  \protect\hyperlink{ref-Lovisari2016}{2016}) and (Ladino et al.
+  \protect\hyperlink{ref-Ladino2018}{2018})?
+\item
+  Implement the estimation algorithm from (Ladino et al.
+  \protect\hyperlink{ref-Ladino2018}{2018}). Consider as a guide the
+  code
+  \href{https://github.com/aladinoster/density-reconstruction/blob/master/Estimation.m}{here}
+  as a guide.
+\item
+  Solve the estimation problem for the following set of measurements.
+  \href{https://github.com/aladinoster/density-reconstruction/blob/master/NoEq_4x4.mat}{here}.
+\end{itemize}
+
 \hypertarget{expected-outcomes-10}{%
 \subsubsection*{Expected outcomes}\label{expected-outcomes-10}}
 \addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\begin{itemize}
+\item
+  Provide an algorithm that performs the estimation
+\item
+  Provide the dynamical response of the algorithm
+\item
+  Provide the dynamical response of the open-loop (headway space/speed)
+  system, (all headway spacings/ speed profiles) to a change in
+  decceleration of \(0.1m/s^2\), applied over 1s.\\
+\item
+  Provide the dynamical response of the closed-loop (headway
+  space/speed) system, (all headway spacings/ speed profiles) to a
+  change in spacing of \(5m\).
+\item
+  Compare the situations and conclude about the implementation of
+  control systems on vehicle automatization. What are the benefits of
+  implementing this type of algorithms?
+\end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -1233,53 +1292,39 @@ performance}\label{task-4-estimation-performance}}
 \subsubsection*{Context}\label{context-12}}
 \addcontentsline{toc}{subsubsection}{Context}
 
+In order to compare the results it is required to compute the error
+between the estimated values and the real values with respect to the
+real values. In this case retrieve the real values from the following
+link
+\href{https://github.com/aladinoster/density-reconstruction/blob/master/Osc_4x4.mat}{here}
+
 \hypertarget{questions-11}{%
 \subsubsection*{Questions}\label{questions-11}}
 \addcontentsline{toc}{subsubsection}{Questions}
+
+\begin{itemize}
+\tightlist
+\item
+  Measure the error in the state (density) and the (outflow) between the
+  real values and the simulated values.
+\item
+  How the parameters may affect the performance of the estimation
+  algorithm?
+\end{itemize}
 
 \hypertarget{expected-outcomes-11}{%
 \subsubsection*{Expected outcomes}\label{expected-outcomes-11}}
 \addcontentsline{toc}{subsubsection}{Expected outcomes}
 
-
-
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{plot}\NormalTok{(cars)  }\CommentTok{# a scatterplot}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-\centering
-\includegraphics{its-2-project_files/figure-latex/foo-1.pdf}
-\caption{\label{fig:foo}A scatterplot of the data \texttt{cars} using \textbf{base} R
-graphics.}
-\end{figure}
-
-\begin{equation}
-f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \label{eq:binom}
-\end{equation}
-
-In \eqref{eq:binom}
-
-Below is an \texttt{align} environment \eqref{eq:align}:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{align}\NormalTok{\}}\SpecialStringTok{ }
-\SpecialStringTok{g(X_\{n\}) &= g(}\SpecialCharTok{\textbackslash{}theta}\SpecialStringTok{)+g'(\{}\SpecialCharTok{\textbackslash{}tilde}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}theta}\SpecialStringTok{\}\})(X_\{n\}-}\SpecialCharTok{\textbackslash{}theta}\SpecialStringTok{) }\SpecialCharTok{\textbackslash{}notag}\SpecialStringTok{ }\SpecialCharTok{\textbackslash{}\textbackslash{}}
-\SpecialCharTok{\textbackslash{}sqrt}\SpecialStringTok{\{n\}[g(X_\{n\})-g(}\SpecialCharTok{\textbackslash{}theta}\SpecialStringTok{)] &= g'}\SpecialCharTok{\textbackslash{}left}\SpecialStringTok{(\{}\SpecialCharTok{\textbackslash{}tilde}\SpecialStringTok{\{}\SpecialCharTok{\textbackslash{}theta}\SpecialStringTok{\}\}}\SpecialCharTok{\textbackslash{}right}\SpecialStringTok{)}
-\SpecialStringTok{  }\SpecialCharTok{\textbackslash{}sqrt}\SpecialStringTok{\{n\}[X_\{n\}-}\SpecialCharTok{\textbackslash{}theta}\SpecialStringTok{ ] (}\SpecialCharTok{\textbackslash{}#}\SpecialStringTok{eq:align)}
-\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{align}\NormalTok{\} }
-\end{Highlighting}
-\end{Shaded}
-
-\begin{align}
-g(X_{n}) &= g(\theta)+g'({\tilde{\theta}})(X_{n}-\theta)\\
-\sqrt{n}[g(X_{n})-g(\theta)] &= g'\left({\tilde{\theta}}\right)
-  \sqrt{n}[X_{n}-\theta ] \label{eq:align}
-\end{align}
+\begin{itemize}
+\tightlist
+\item
+  Provide the computation of the error for between the estimated and the
+  real values for the nominal parameters and the parameters perturbed
+  with noise.
+\item
+  Provide conclusions on future work for this estimation technique.
+\end{itemize}
 
 \hypertarget{sources-2}{%
 \section*{Sources}\label{sources-2}}

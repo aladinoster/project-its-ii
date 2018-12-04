@@ -78,13 +78,35 @@ knitr::include_graphics("images/p1-01-network.png")
 
 ### Task 2: Simulation {-}
 
-Dynamic simulation  of open loop traffic networks. For this task be sure to review already implemented simulations available at [Link](https://github.com/andres-ladino-ifsttar/traffic-macrosimulator). Get familiar with the code here developed before you enter into details of implementation. 
+Dynamic simulation  of open loop traffic networks. For this task be sure to review already implemented simulations available at [Link](https://github.com/aladinoster/density-reconstruction). Get familiar with the code here developed before you enter into details of implementation. 
 
 #### Context {-}
 
+In order to implement the model of the network that will help the reconstruction algorithm, please consider
+
+\begin{align}
+\rho(k+1) = \rho(k) + (R^T - I)\varphi^{out}(t) + \varphi^{ext}(t) (\#eq:lwr)
+\end{align}
+
+where in particular $\varphi^{out}(k)$ is found: 
+
+\begin{align}
+\underset{\varphi^{out}}{\max} \sum_i \varphi^{out}_i\quad \text{s.t}\quad \varphi^{out} \in \mathcal{P}
+\end{align}
+
 #### Questions {-}
 
+* Design and create a simulation of the traffic network for the case in which the value of splitting ratio is $0.6$ if the flow follows the straight direction and the rest of the percentage divides equally for turning directions. Select in this case fixed values of demand. What are the values of density and 
+* Verify the equilibrium condition on the network, see more details in [@Ladino2018]. Does it holds for the particular value? For this purpose initialize the traffic evolution from different initial conditions and constant values of demand, how long does the network takes to reach equilibrium? 
+* Add a random noise $\sim \mathcal{N}(0,0.1)$ to each one of the splitting ratios within the network. How 
+
 #### Expected outcomes {-}
+
+* Present the dynamic profiles for density on each one of the roads under different setups of traffic lights. The dynamic profiles should specify density per road in time  
+
+* Provide comparisons between different traffic models with and without noise in the parameters and an analysis on how this error evolves according to different values of demand. 
+
+* Initialize the simulation from different initial conditions and constant values of demand. And obtain the equilibrium points of the network, determine also the time to reach this equilibrium values.  
 
 ***
 
@@ -92,9 +114,28 @@ Dynamic simulation  of open loop traffic networks. For this task be sure to revi
 
 #### Context {-}
 
+Two different reconstruction algorithms have been proposed in [@Lovisari2016] and [@Ladino2018], both of them follow the principle of accounting for speed and flow measurements in order to retrieve the state of the network. Please exam these works before implementing the estimation algorithm. 
+
+The estimation technique can be reduced to the solution of the following optimal problem 
+
+\begin{align}
+\underset{\rho,\varphi}{\min} \|C\varphi - \bar{\varphi}\|^2 + \|S(\rho - \Psi^{-1}(v))\|^2 +  \|(R^T-I)\varphi +\varphi^{ext}\|^2\quad \text{s.t}\quad \varphi \in \mathcal{P}_\varphi, \rho \in \mathcal{P}_\rho
+\end{align}
+
 #### Questions {-}
 
+* What are the differences between the algorithms proposed in [@Lovisari2016] and [@Ladino2018]?
+* Implement the estimation algorithm from [@Ladino2018]. Consider as a guide the code [here](https://github.com/aladinoster/density-reconstruction/blob/master/Estimation.m) as a guide. 
+* Solve the estimation problem for the following set of measurements. [here](https://github.com/aladinoster/density-reconstruction/blob/master/NoEq_4x4.mat).
+
 #### Expected outcomes {-}
+
+* Provide an algorithm that performs the estimation 
+* Provide the dynamical response of the algorithm
+
+* Provide the dynamical response of the open-loop (headway space/speed) system, (all headway spacings/ speed profiles) to a change in decceleration of $0.1m/s^2$, applied over 1s.  
+* Provide the dynamical response of the closed-loop (headway space/speed) system,  (all headway spacings/ speed profiles) to a change in spacing of $5m$. 
+* Compare the situations and conclude about the implementation of control systems on vehicle automatization. What are the benefits of implementing this type of algorithms? 
 
 *** 
 
@@ -103,40 +144,17 @@ Dynamic simulation  of open loop traffic networks. For this task be sure to revi
 
 #### Context {-}
 
+In order to compare the results it is required to compute the error between the estimated values and the real values with respect to the real values. In this case retrieve the real values from the following link [here](https://github.com/aladinoster/density-reconstruction/blob/master/Osc_4x4.mat)
+
 #### Questions {-}
+
+* Measure the error in the state (density) and the (outflow) between the real values and the simulated values. 
+* How the parameters may affect the performance of the estimation algorithm? 
 
 #### Expected outcomes {-}
 
-
-(ref:foo) A scatterplot of the data `cars` using **base** R graphics. 
-
-```{r foo, fig.cap='(ref:foo)'}
-plot(cars)  # a scatterplot
-```
-
-\begin{equation}
-f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} (\#eq:binom)
-\end{equation}
-
-
-In \@ref(eq:binom)
-
-
-Below is an `align` environment \@ref(eq:align):
-
-```latex
-\begin{align} 
-g(X_{n}) &= g(\theta)+g'({\tilde{\theta}})(X_{n}-\theta) \notag \\
-\sqrt{n}[g(X_{n})-g(\theta)] &= g'\left({\tilde{\theta}}\right)
-  \sqrt{n}[X_{n}-\theta ] (\#eq:align)
-\end{align} 
-```
-
-\begin{align}
-g(X_{n}) &= g(\theta)+g'({\tilde{\theta}})(X_{n}-\theta)\\
-\sqrt{n}[g(X_{n})-g(\theta)] &= g'\left({\tilde{\theta}}\right)
-  \sqrt{n}[X_{n}-\theta ] (\#eq:align)
-\end{align}
+* Provide the computation of the error for between the estimated and the real values for the nominal parameters and the parameters perturbed with noise. 
+* Provide conclusions on future work for this estimation technique. 
 
 ## Sources {-}
 

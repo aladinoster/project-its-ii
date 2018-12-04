@@ -48,69 +48,6 @@
 
 
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -250,15 +187,33 @@ Figure 10: City network model
 </div>
 <div id="task-2-simulation-1" class="section level3 unnumbered">
 <h3>Task 2: Simulation</h3>
-<p>Dynamic simulation of open loop traffic networks. For this task be sure to review already implemented simulations available at <a href="https://github.com/andres-ladino-ifsttar/traffic-macrosimulator">Link</a>. Get familiar with the code here developed before you enter into details of implementation.</p>
+<p>Dynamic simulation of open loop traffic networks. For this task be sure to review already implemented simulations available at <a href="https://github.com/aladinoster/density-reconstruction">Link</a>. Get familiar with the code here developed before you enter into details of implementation.</p>
 <div id="context-10" class="section level4 unnumbered">
 <h4>Context</h4>
+<p>In order to implement the model of the network that will help the reconstruction algorithm, please consider</p>
+<p><span class="math display" id="eq:lwr">\[\begin{align}
+\rho(k+1) = \rho(k) + (R^T - I)\varphi^{out}(t) + \varphi^{ext}(t) \tag{5}
+\end{align}\]</span></p>
+<p>where in particular <span class="math inline">\(\varphi^{out}(k)\)</span> is found:</p>
+<p><span class="math display">\[\begin{align}
+\underset{\varphi^{out}}{\max} \sum_i \varphi^{out}_i\quad \text{s.t}\quad \varphi^{out} \in \mathcal{P}
+\end{align}\]</span></p>
 </div>
 <div id="questions-9" class="section level4 unnumbered">
 <h4>Questions</h4>
+<ul>
+<li>Design and create a simulation of the traffic network for the case in which the value of splitting ratio is <span class="math inline">\(0.6\)</span> if the flow follows the straight direction and the rest of the percentage divides equally for turning directions. Select in this case fixed values of demand. What are the values of density and</li>
+<li>Verify the equilibrium condition on the network, see more details in <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span>. Does it holds for the particular value? For this purpose initialize the traffic evolution from different initial conditions and constant values of demand, how long does the network takes to reach equilibrium?</li>
+<li>Add a random noise <span class="math inline">\(\sim \mathcal{N}(0,0.1)\)</span> to each one of the splitting ratios within the network. How</li>
+</ul>
 </div>
 <div id="expected-outcomes-9" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
+<ul>
+<li><p>Present the dynamic profiles for density on each one of the roads under different setups of traffic lights. The dynamic profiles should specify density per road in time</p></li>
+<li><p>Provide comparisons between different traffic models with and without noise in the parameters and an analysis on how this error evolves according to different values of demand.</p></li>
+<li><p>Initialize the simulation from different initial conditions and constant values of demand. And obtain the equilibrium points of the network, determine also the time to reach this equilibrium values.</p></li>
+</ul>
 <hr />
 </div>
 </div>
@@ -266,12 +221,30 @@ Figure 10: City network model
 <h3>Task 3: Estimation algorithm</h3>
 <div id="context-11" class="section level4 unnumbered">
 <h4>Context</h4>
+<p>Two different reconstruction algorithms have been proposed in <span class="citation">(Lovisari, Canudas-de-wit, and Kibangou <a href="#ref-Lovisari2016">2016</a>)</span> and <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span>, both of them follow the principle of accounting for speed and flow measurements in order to retrieve the state of the network. Please exam these works before implementing the estimation algorithm.</p>
+<p>The estimation technique can be reduced to the solution of the following optimal problem</p>
+<p><span class="math display">\[\begin{align}
+\underset{\rho,\varphi}{\min} \|C\varphi - \bar{\varphi}\|^2 + \|S(\rho - \Psi^{-1}(v))\|^2 +  \|(R^T-I)\varphi +\varphi^{ext}\|^2\quad \text{s.t}\quad \varphi \in \mathcal{P}_\varphi, \rho \in \mathcal{P}_\rho
+\end{align}\]</span></p>
 </div>
 <div id="questions-10" class="section level4 unnumbered">
 <h4>Questions</h4>
+<ul>
+<li>What are the differences between the algorithms proposed in <span class="citation">(Lovisari, Canudas-de-wit, and Kibangou <a href="#ref-Lovisari2016">2016</a>)</span> and <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span>?</li>
+<li>Implement the estimation algorithm from <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span>. Consider as a guide the code <a href="https://github.com/aladinoster/density-reconstruction/blob/master/Estimation.m">here</a> as a guide.</li>
+<li>Solve the estimation problem for the following set of measurements. <a href="https://github.com/aladinoster/density-reconstruction/blob/master/NoEq_4x4.mat">here</a>.</li>
+</ul>
 </div>
 <div id="expected-outcomes-10" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
+<ul>
+<li>Provide an algorithm that performs the estimation</li>
+<li><p>Provide the dynamical response of the algorithm</p></li>
+<li>Provide the dynamical response of the open-loop (headway space/speed) system, (all headway spacings/ speed profiles) to a change in decceleration of <span class="math inline">\(0.1m/s^2\)</span>, applied over 1s.<br />
+</li>
+<li>Provide the dynamical response of the closed-loop (headway space/speed) system, (all headway spacings/ speed profiles) to a change in spacing of <span class="math inline">\(5m\)</span>.</li>
+<li><p>Compare the situations and conclude about the implementation of control systems on vehicle automatization. What are the benefits of implementing this type of algorithms?</p></li>
+</ul>
 <hr />
 </div>
 </div>
@@ -279,35 +252,21 @@ Figure 10: City network model
 <h3>Task 4: Estimation performance</h3>
 <div id="context-12" class="section level4 unnumbered">
 <h4>Context</h4>
+<p>In order to compare the results it is required to compute the error between the estimated values and the real values with respect to the real values. In this case retrieve the real values from the following link <a href="https://github.com/aladinoster/density-reconstruction/blob/master/Osc_4x4.mat">here</a></p>
 </div>
 <div id="questions-11" class="section level4 unnumbered">
 <h4>Questions</h4>
+<ul>
+<li>Measure the error in the state (density) and the (outflow) between the real values and the simulated values.</li>
+<li>How the parameters may affect the performance of the estimation algorithm?</li>
+</ul>
 </div>
 <div id="expected-outcomes-11" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
-
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">plot</span>(cars)  <span class="co"># a scatterplot</span></a></code></pre></div>
-<div class="figure"><span id="fig:foo"></span>
-<img src="its-2-project_files/figure-html/foo-1.png" alt="A scatterplot of the data cars using base R graphics." width="672" />
-<p class="caption">
-Figure 11: A scatterplot of the data <code>cars</code> using <strong>base</strong> R graphics.
-</p>
-</div>
-<p><span class="math display" id="eq:binom">\[\begin{equation}
-f\left(k\right)=\binom{n}{k}p^k\left(1-p\right)^{n-k} \tag{5}
-\end{equation}\]</span></p>
-<p>In <a href="project-3-density-reconstruction.html#eq:binom">(5)</a></p>
-<p>Below is an <code>align</code> environment <a href="project-3-density-reconstruction.html#eq:align">(6)</a>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode latex"><code class="sourceCode latex"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">\begin</span>{<span class="ex">align</span>}<span class="ss"> </span></a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="ss">g(X_{n}) &amp;= g(</span><span class="sc">\theta</span><span class="ss">)+g&#39;({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}})(X_{n}-</span><span class="sc">\theta</span><span class="ss">) </span><span class="sc">\notag</span><span class="ss"> </span><span class="sc">\\</span></a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="sc">\sqrt</span><span class="ss">{n}[g(X_{n})-g(</span><span class="sc">\theta</span><span class="ss">)] &amp;= g&#39;</span><span class="sc">\left</span><span class="ss">({</span><span class="sc">\tilde</span><span class="ss">{</span><span class="sc">\theta</span><span class="ss">}}</span><span class="sc">\right</span><span class="ss">)</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="ss">  </span><span class="sc">\sqrt</span><span class="ss">{n}[X_{n}-</span><span class="sc">\theta</span><span class="ss"> ] (</span><span class="sc">\#</span><span class="ss">eq:align)</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="kw">\end</span>{<span class="ex">align</span>} </a></code></pre></div>
-<p><span class="math display" id="eq:align">\[\begin{align}
-g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta)\\
-\sqrt{n}[g(X_{n})-g(\theta)] &amp;= g&#39;\left({\tilde{\theta}}\right)
-  \sqrt{n}[X_{n}-\theta ] \tag{6}
-\end{align}\]</span></p>
+<ul>
+<li>Provide the computation of the error for between the estimated and the real values for the nominal parameters and the parameters perturbed with noise.</li>
+<li>Provide conclusions on future work for this estimation technique.</li>
+</ul>
 </div>
 </div>
 </div>
