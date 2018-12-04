@@ -17,6 +17,8 @@ description: "This is a website to describe the Intelligent Transportation Syste
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+***
+
 # ITS for Smart Mobility {-}
 
 (ref:car) New connected vehicles [https://pixabay.com](Taken from: https://pixabay.com). 
