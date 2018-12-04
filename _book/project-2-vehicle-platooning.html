@@ -214,7 +214,7 @@ Figure 5: Example of a vehicle platoon.
 <p>Consider the dynamical model presented in <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019:ISTTT">2019</a><a href="#ref-Duret2019:ISTTT">a</a>)</span>, <span class="citation">(Turri, Besselink, and Johansson <a href="#ref-Turri2017">2017</a>)</span> where the problem of truck platooning is detailed.</p>
 <div id="context-5" class="section level4 unnumbered">
 <h4>Context</h4>
-<p>In general the platoon problem is a <em>dynamic control problem</em> where the objective is to regulate or mantain the value of a specific variable within the system at a desired level. In order to produce this regulation a <em>controller</em> is requrired and in most of the cases cases there is always a way to express the dynamical model in the following form:</p>
+<p>In general the platoon problem is a <em>dynamic control problem</em> where the objective is to regulate or mantain the value of a specific variable within the system at a desired level. In order to produce this regulation a <em>controller</em> is required and in most of the cases there is always a way to express the dynamical model in the following form:</p>
 <p><span class="math display" id="eq:platoon">\[\begin{align}
 \dot{x}(t) = f(x(t), u(t)) \tag{4}
 \end{align}\]</span></p>
@@ -224,7 +224,7 @@ Figure 5: Example of a vehicle platoon.
 <h4>Questions</h4>
 <ul>
 <li>What are the main goals of platoon strategies, and how they can improve the traffic in future?</li>
-<li>Create a model for a platoon of 4 vehicles that considers a simple dynamic model of 2nd order and a 3rd order one. <strong>Note: Consider for this case a model in which no drag is present within the model.</strong>. This model can be written as in <a href="project-2-vehicle-platooning.html#eq:platoon">(4)</a> where the stability can be analyzed.</li>
+<li>Create a model for a platoon of 4 vehicles that considers a simple dynamic model of 2nd order and a 3rd order one. <strong>Note: Consider for this case a model in which no drag is present within the model</strong>. This model can be written as in <a href="project-2-vehicle-platooning.html#eq:platoon">(4)</a> where the stability can be analyzed.</li>
 <li>Which could be the traffic parameters in this kind of models?</li>
 </ul>
 </div>
@@ -232,7 +232,7 @@ Figure 5: Example of a vehicle platoon.
 <h4>Expected outcomes</h4>
 <ul>
 <li>Present a brief summary on the motivations to create vehicle platoons and the main existing models that can be developed for this purpose.</li>
-<li>Based on the work of <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019:ISTTT">2019</a><a href="#ref-Duret2019:ISTTT">a</a>)</span>, <span class="citation">(Wang et al. <a href="#ref-Meng2014b:TR-C">2014</a>)</span> determine writedown the state equations for a platoon model of 4 vehicles of <em>2nd order</em> and <em>3rd order</em>.<br />
+<li>Based on the work of <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019:ISTTT">2019</a><a href="#ref-Duret2019:ISTTT">a</a>)</span>, <span class="citation">(Wang et al. <a href="#ref-Meng2014b:TR-C">2014</a>)</span> determine and write down the state equations for a platoon model of 4 vehicles of <em>2nd order</em> and <em>3rd order</em>.<br />
 </li>
 <li>Determine the stability properties of the model. Stability properties are associated to the location of zeros and poles of the transfer function of the model or eigen values of the matrix <a href="https://en.wikipedia.org/wiki/Stability_theory">See more</a></li>
 </ul>
@@ -257,8 +257,8 @@ Figure 6: Open loop system.
 <h4>Questions</h4>
 <ul>
 <li>Which is the response of spacing of all vehicles when an impulse of deceleration of amplitude <span class="math inline">\(u = 0.1m/s^2\)</span> is performed over the second vehicle? *</li>
-<li>Are there any differences between the spacings when applying the decceleration over a <em>2nd order</em> model or a <em>3rd order model</em>?</li>
-<li>Consider the <em>time engine</em> constant in the <em>3rd order</em> model. What is the effect of this vale in the dynamic acceleration/ decceleration of the system?</li>
+<li>Are there any differences between the spacings when applying the deceleration over a <em>2nd order</em> model or a <em>3rd order model</em>?</li>
+<li>Consider the <em>time engine</em> constant in the <em>3rd order</em> model. What is the effect of this value in the dynamic acceleration/ deceleration of the system?</li>
 </ul>
 </div>
 <div id="expected-outcomes-5" class="section level4 unnumbered">
