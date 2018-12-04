@@ -334,8 +334,9 @@ provide a report as follows:
 \end{itemize}
 
 \hypertarget{project-1-signalized-traffic}{%
-\chapter{Project 1: Signalized
+\chapter*{Project 1: Signalized
 Traffic}\label{project-1-signalized-traffic}}
+\addcontentsline{toc}{chapter}{Project 1: Signalized Traffic}
 
 The main objective of this project is to design \emph{traffic light
 signal} controls in order to optimize particular traffic conditions.
@@ -675,8 +676,9 @@ please check:
 \end{itemize}
 
 \hypertarget{project-2-vehicle-platooning}{%
-\chapter{Project 2: Vehicle
+\chapter*{Project 2: Vehicle
 Platooning}\label{project-2-vehicle-platooning}}
+\addcontentsline{toc}{chapter}{Project 2: Vehicle Platooning}
 
 The main objective of this project is to design a controller for a
 platoon of vehicles in order to optimize the traffic flow and reduce the
@@ -753,7 +755,12 @@ following form:
 \end{align}
 
 where \(x(t), u(t)\) correspond to the state vector, and the control
-vector of the system. In general a system describing this
+vector of the system. In general a system describing this behavior is
+called \emph{dynamic} system. In case of platoon the state vector
+represents all the variables that contain \emph{minimum} information to
+represent the system like, vehicle position, speed, or headway space.
+The control vector correspond to the variables that are inputs to the
+systems, e.g.~acceleration when modifying the state of a vehicle.
 
 \hypertarget{questions-4}{%
 \subsubsection*{Questions}\label{questions-4}}
@@ -765,10 +772,11 @@ vector of the system. In general a system describing this
   What are the main goals of platoon strategies, and how they can
   improve the traffic in future?
 \item
-  Create a model for a platoon of 6 vehicles that considers a simple
-  dynamic model of 2nd order. \textbf{Note: Consider for this case a
-  model in which no drag is present within the model.}. This model can
-  be written as in \eqref{eq:platoon} where the stability can be analyzed.
+  Create a model for a platoon of 4 vehicles that considers a simple
+  dynamic model of 2nd order and a 3rd order one. \textbf{Note: Consider
+  for this case a model in which no drag is present within the model.}.
+  This model can be written as in \eqref{eq:platoon} where the stability
+  can be analyzed.
 \item
   Which could be the traffic parameters in this kind of models?
 \end{itemize}
@@ -786,7 +794,8 @@ vector of the system. In general a system describing this
   Based on the work of (Duret, Wang, and Ladino
   \protect\hyperlink{ref-Duret2019:ISTTT}{2019}\protect\hyperlink{ref-Duret2019:ISTTT}{a}),
   (Wang et al. \protect\hyperlink{ref-Meng2014b:TR-C}{2014}) determine
-  writedown the state equation for a platoon model of 4 vehicles.
+  writedown the state equations for a platoon model of 4 vehicles of 2nd
+  and 3rd order.\\
 \item
   Determine the stability properties of the model. Stability properties
   are associated to the location of zeros and poles of the transfer
@@ -805,9 +814,39 @@ simulation}\label{task-2-open-loop-simulation}}
 \subsubsection*{Context}\label{context-6}}
 \addcontentsline{toc}{subsubsection}{Context}
 
+One of the first studies in terms of analyzing the properties of a
+dynamical system is the dynamical response of the system. This response
+can be characterized by the step response of the system to a specific
+control input.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics{images/p2-02-control-open} 
+
+}
+
+\caption{Open loop system.}\label{fig:opencav}
+\end{figure}
+
 \hypertarget{questions-5}{%
 \subsubsection*{Questions}\label{questions-5}}
 \addcontentsline{toc}{subsubsection}{Questions}
+
+\begin{itemize}
+\tightlist
+\item
+  Which is the response of spacing of all vehicles when an impulse of
+  deceleration of amplitude \(u = 0.1m/s^2\) is performed over the
+  second vehicle?
+\item
+  Are there any differences between the
+\item
+  Consider the \emph{time engine} constant in the 3rd order model. What
+  is the effect of this vale in the dynamic acceleration/ decceleration
+  of the system?
+\end{itemize}
 
 \hypertarget{expected-outcomes-5}{%
 \subsubsection*{Expected outcomes}\label{expected-outcomes-5}}
@@ -816,7 +855,15 @@ simulation}\label{task-2-open-loop-simulation}}
 \begin{itemize}
 \tightlist
 \item
-  Obtain the trajectories for a platoon of 4 vehicles
+  Create a simulation of the 2nd /3rd order platoon vehicle models in
+  which the inputs are the accelerations of all vehicles and the
+  outcomes are the headway spaces, and speeds of each vehicle.
+\item
+  Retrieve the dynamic response of the headway space for the 2nd order/
+  3rd order for an impulse of \(u = 0.1m/s^2\)
+\item
+  Obtain the trajectories in space and time for the platoon of 4
+  vehicles.
 \end{itemize}
 
 \hypertarget{task-3-vehicle-platoon-control}{%
@@ -830,13 +877,56 @@ control}\label{task-3-vehicle-platoon-control}}
 \subsubsection*{Context}\label{context-7}}
 \addcontentsline{toc}{subsubsection}{Context}
 
+In order to control the system a feedback loop should be introduced in
+terms of accelerations of vehicles as shown in the Figure
+\ref{fig:closedcav}
+
+
+
+\begin{figure}
+
+{\centering \includegraphics{images/p2-03-closed-loop} 
+
+}
+
+\caption{Closed loop system.}\label{fig:closedcav}
+\end{figure}
+
 \hypertarget{questions-6}{%
 \subsubsection*{Questions}\label{questions-6}}
 \addcontentsline{toc}{subsubsection}{Questions}
 
+\begin{itemize}
+\tightlist
+\item
+  Based on the control strategy proposed in (Wang et al.
+  \protect\hyperlink{ref-Meng2014b:TR-C}{2014}). Which is one of the
+  possibles control structures that can be used for these systems?
+\item
+  Define and justify some specific values for the proportional integral
+  control parameters.
+\item
+  Set the desire spacing of the system to a specific value of \(10m\)
+  for all vehicles, then test a change in the headway space of \(5m\)
+  for one of the vehicles. What do you see as a different behavior?
+\end{itemize}
+
 \hypertarget{expected-outcomes-6}{%
 \subsubsection*{Expected outcomes}\label{expected-outcomes-6}}
 \addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\begin{itemize}
+\tightlist
+\item
+  Provide the dynamical response of the open-loop (headway space/speed)
+  system.
+\item
+  Provide the dynamical response of the closed-loop (headway
+  space/speed) system.
+\item
+  Compare the situations and conclude about the implementation of
+  control systems on vehicle automatization.
+\end{itemize}
 
 \hypertarget{task-4-performance-evaluation-1}{%
 \subsection*{Task 4: Performance
@@ -869,9 +959,10 @@ evaluation}\label{task-4-performance-evaluation-1}}
   available \href{http://bit.ly/Hierarchical_ISTTT}{Link}
 \end{itemize}
 
-\hypertarget{project-4-density-reconstruction}{%
-\chapter{Project 4: Density
-Reconstruction}\label{project-4-density-reconstruction}}
+\hypertarget{project-3-density-reconstruction}{%
+\chapter*{Project 3: Density
+Reconstruction}\label{project-3-density-reconstruction}}
+\addcontentsline{toc}{chapter}{Project 3: Density Reconstruction}
 
 \includegraphics{images/p4-01-density.png}
 

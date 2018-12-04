@@ -1,4 +1,4 @@
-# Project 2: Vehicle Platooning
+# Project 2: Vehicle Platooning {-}
 
 The main objective of this project is to design a controller for a platoon of vehicles in order to optimize the traffic flow and reduce the fuel consumption. A platoon of vehicles can be seen as: 
 
@@ -33,19 +33,19 @@ In general the platoon problem is a *dynamic control problem* where the objectiv
 \dot{x}(t) = f(x(t), u(t)) (\#eq:platoon)
 \end{align}
 
-where $x(t), u(t)$ correspond to the state vector, and the control vector of the system. In general a system describing this
+where $x(t), u(t)$ correspond to the state vector, and the control vector of the system. In general a system describing this behavior is called *dynamic* system. In case of platoon the state vector represents all the variables that contain *minimum* information to represent the system like, vehicle position, speed, or headway space. The control vector correspond to the variables that are inputs to the systems, e.g. acceleration when modifying the state of a vehicle. 
 
 #### Questions {-}
 
 * What are the main goals of platoon strategies, and how they can improve the traffic in future? 
-* Create a model for a platoon of 6 vehicles that considers a simple dynamic model of 2nd order. **Note: Consider for this case a model in which no drag is present within the model.**. This model can be written as in  \@ref(eq:platoon) where the stability can be analyzed. 
+* Create a model for a platoon of 4 vehicles that considers a simple dynamic model of 2nd order and a 3rd order one. **Note: Consider for this case a model in which no drag is present within the model.**. This model can be written as in  \@ref(eq:platoon) where the stability can be analyzed. 
 * Which could be the traffic parameters in this kind of models? 
  
 
 #### Expected outcomes {-}
 
 * Present a brief summary on the motivations to create vehicle platoons and the main existing models that can be developed for this purpose.
-* Based on the work of [@Duret2019:ISTTT], [@Meng2014b:TR-C] determine writedown the state equation for a platoon model of 4 vehicles. 
+* Based on the work of [@Duret2019:ISTTT], [@Meng2014b:TR-C] determine writedown the state equations for a platoon model of 4 vehicles of 2nd and 3rd order.  
 * Determine the stability properties of the model. Stability properties are associated to the location of zeros and poles of the transfer function of the model or eigen values of the matrix [See more](https://en.wikipedia.org/wiki/Stability_theory)
 
 ***
@@ -54,11 +54,25 @@ where $x(t), u(t)$ correspond to the state vector, and the control vector of the
 
 #### Context {-}
 
+One of the first studies in terms of analyzing the properties of a dynamical system is the dynamical response of the system. This response can be characterized by the step response of the system to a specific control input. 
+
+(ref:opencav) Open loop system. 
+
+```{r opencav, fig.cap='(ref:opencav)', fig.align = 'center', fig.width = 4, echo= FALSE}
+knitr::include_graphics("images/p2-02-control-open.png")
+```
+
 #### Questions {-}
+
+* Which is the response of spacing of all vehicles when an impulse of deceleration of amplitude $u = 0.1m/s^2$ is performed over the second vehicle? 
+* Are there any differences between the 
+* Consider the *time engine* constant in the 3rd order model. What is the effect of this vale in the dynamic acceleration/ decceleration of the system? 
 
 #### Expected outcomes {-}
 
-* Obtain the trajectories for a platoon of 4 vehicles 
+* Create a simulation of the 2nd /3rd order platoon vehicle models in which the inputs are the accelerations of all vehicles and the outcomes are the headway spaces, and speeds of each vehicle. 
+* Retrieve the dynamic response of the headway space for the 2nd order/ 3rd order for an impulse of  $u = 0.1m/s^2$
+* Obtain the trajectories in space and time for the platoon of 4 vehicles.
 
 ### Task 3: Vehicle platoon control {-}
 
@@ -66,9 +80,26 @@ where $x(t), u(t)$ correspond to the state vector, and the control vector of the
 
 #### Context {-}
 
+In order to control the system a feedback loop should be introduced in terms of accelerations of vehicles as shown in the Figure \@ref(fig:closedcav) 
+
+(ref:closedcav) Closed loop system. 
+
+```{r closedcav, fig.cap='(ref:closedcav)', fig.align = 'center', fig.width = 4, echo= FALSE}
+knitr::include_graphics("images/p2-03-closed-loop.png")
+```
+
+
 #### Questions {-}
 
+* Based on the control strategy proposed in [@Meng2014b:TR-C]. Which is one of the possibles control structures that can be used for these systems?
+* Define and justify some specific values for the proportional integral control parameters.
+* Set the desire spacing of the system to a specific value of $10m$ for all vehicles, then test a change in the headway space of $5m$ for one of the vehicles. What do you see as a different behavior? 
+
 #### Expected outcomes {-}
+
+* Provide the dynamical response of the open-loop (headway space/speed) system. 
+* Provide the dynamical response of the closed-loop (headway space/speed) system.
+* Compare the situations and conclude about the implementation of control systems on vehicle automatization. 
 
 ### Task 4: Performance evaluation {-}
 

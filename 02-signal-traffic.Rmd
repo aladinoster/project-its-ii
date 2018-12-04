@@ -1,4 +1,4 @@
-# Project 1: Signalized Traffic
+# Project 1: Signalized Traffic {-}
 
 The main objective of this project is to design *traffic light signal* controls in order to optimize particular traffic conditions. Traffic signals regularly pre-establish fixed values *red* or *green* for a particular intersection. In fact the behavior can be modeled as: 
 

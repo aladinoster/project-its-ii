@@ -1,4 +1,4 @@
-# Project 4: Density Reconstruction
+# Project 3: Density Reconstruction {-}
 
 ![](images/p4-01-density.png)
 
