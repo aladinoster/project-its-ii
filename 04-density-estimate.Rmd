@@ -51,11 +51,28 @@ ggplot(data=Demand,aes(x=Density,y=Flow))+geom_line(color='red', show.legend = T
 
 Within the Figure [@Ladino2018] the *red* curve represnets the *demand* of a link and the *blue* curve represents the *supply* of the link. The main objective is to model the fixed capacity of the flow. In this approach the blue line is determined by information *downstream* the network while the red line is determined by information *upstream*.   
 
+
+(ref:citynet) City network model 
+
+```{r citynet, fig.cap='(ref:citynet)', fig.align = 'center', fig.width = 4, echo= FALSE}
+knitr::include_graphics("images/p1-01-network.png")
+```
+
+
 #### Questions {-}
 
-* Which is the actual model of
+* Explore the relationship of the fundamental diagram  \@ref(fig:fdiag). Remember that this is a function defined for two different intervals. Knowing that $\phi = v\rho$ is a fundamnetal relationship on traffic, determine the relationship between $v$ and $\rho$. Is it possible to have a univoque relationsihp for all cases? 
+* Check the conditions that are required for recovering the density in [@Lovisari2016], why are these conditions required? 
+* Based on a literature review, determine the traffic model for teh network exposed in \@ref(fig:citynet).
 
 #### Expected outcomes {-}
+
+* Present a brief summary of the existing current models for traffic networks. At same time highlight the key features of these models and the remaining difficulties. Consider including references for the presented models. 
+
+* Based on [@Lovisari2016], [@Ladino2018] obtain a model for the signalized network of Figure \@ref(fig:city) and the parameters required model this corridor. 
+
+* Define the set of parameters for the traffic network, notably those related to the fundamental diagram and splitting ratio . Consider a fixed setup of this parameters for the moment and overall explain the reason of the choice.  
+
 
 ***
 
