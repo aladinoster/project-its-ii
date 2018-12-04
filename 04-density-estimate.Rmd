@@ -1,6 +1,68 @@
 # Project 3: Density Reconstruction {-}
 
+The state of congestion of a city is one of the critical. This project aims to study the reconstruction of traffic variables from different type of sources. For more information the detail of this work can be found at [@Lovisari2016], [@Ladino2018].
+
 ![](images/p4-01-density.png)
+
+In this approach in particular, the reconstruction of density will be based on multiple hypothesys. 
+
+* There exist multiple sources of traffic information such as *Floating Car Data (FCD)* or *Magnetic Loop Data (MLD)*, the nature of these two measurements is different. While FCD can be collected easily and almost every where in the traffic network, it is not really representative of the congestion state due to the penetration rate. Its counter part MLD is accurate when determining the amount of vehicles circulating at specific spots, but extending this mechanism of measurement to the whole network is expensive. 
+* The use of models like the LWR model may be useful for providing extra information to retrieve the congestion state of the network. 
+
+***
+
+## Objectives {-}
+
+The main objective of this project is to: 
+
+1. Study the LWR model and in particular its network counter part. 
+2. Obtain and simulate a macroscopic traffic model for a urban network. 
+3. Create and design an estimator in order to retrieve the state of the network based on heterogenous measurements. 
+4. Compare the behavior and performance of the estimator under multiple situations. 
+
+## Description {-}
+
+***
+
+### Task 1: Modeling {-}
+
+#### Context {-}
+
+#### Questions {-}
+
+#### Expected outcomes {-}
+
+***
+
+### Task 2: Simulation {-}
+
+#### Context {-}
+
+#### Questions {-}
+
+#### Expected outcomes {-}
+
+***
+
+### Task 3: Estimation algorithm {-}
+
+#### Context {-}
+
+#### Questions {-}
+
+#### Expected outcomes {-}
+
+*** 
+
+
+### Task 4: Estimation performance {-}
+
+#### Context {-}
+
+#### Questions {-}
+
+#### Expected outcomes {-}
+
 
 (ref:foo) A scatterplot of the data `cars` using **base** R graphics. 
 

@@ -21,6 +21,8 @@ The main objective of this project is to:
 
 ## Description {-}
 
+***
+
 ### Task 1: Platoon modeling {-}
 
 Consider the dynamical model presented in [@Duret2019:ISTTT], [@Turri2017] where the problem of truck platooning is detailed.  

@@ -35,6 +35,8 @@ The main objective of this project is to:
 
 ## Description {-}
 
+***
+
 ### Task 1: Modeling {-}
 
 Check models for macroscopic networks: [@Grandinetti2015], [@Grandinetti2016],[@Varaiya2013:TR-C]. Determine the parameters required to model a road traffic network. 

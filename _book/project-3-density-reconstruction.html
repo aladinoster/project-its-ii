@@ -158,6 +158,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="project-2-vehicle-platooning.html"><a href="project-2-vehicle-platooning.html#sources-1"><i class="fa fa-check"></i>Sources</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html"><i class="fa fa-check"></i>Project 3: Density Reconstruction</a><ul>
+<li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#objectives-2"><i class="fa fa-check"></i>Objectives</a></li>
+<li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#description-2"><i class="fa fa-check"></i>Description</a><ul>
+<li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#task-1-modeling-1"><i class="fa fa-check"></i>Task 1: Modeling</a></li>
+<li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#task-2-simulation-1"><i class="fa fa-check"></i>Task 2: Simulation</a></li>
+<li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#task-3-estimation-algorithm"><i class="fa fa-check"></i>Task 3: Estimation algorithm</a></li>
+<li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#task-4-estimation-performance"><i class="fa fa-check"></i>Task 4: Estimation performance</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#sources-2"><i class="fa fa-check"></i>Sources</a></li>
 <li class="chapter" data-level="" data-path="project-3-density-reconstruction.html"><a href="project-3-density-reconstruction.html#reference"><i class="fa fa-check"></i>Reference</a></li>
 </ul></li>
@@ -181,7 +188,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="project-3-density-reconstruction" class="section level1 unnumbered">
 <h1>Project 3: Density Reconstruction</h1>
+<p>The state of congestion of a city is one of the critical. This project aims to study the reconstruction of traffic variables from different type of sources. For more information the detail of this work can be found at <span class="citation">(Lovisari, Canudas-de-wit, and Kibangou <a href="#ref-Lovisari2016">2016</a>)</span>, <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span>.</p>
 <p><img src="images/p4-01-density.png" /></p>
+<p>In this approach in particular, the reconstruction of density will be based on multiple hypothesys.</p>
+<ul>
+<li>There exist multiple sources of traffic information such as <em>Floating Car Data (FCD)</em> or <em>Magnetic Loop Data (MLD)</em>, the nature of these two measurements is different. While FCD can be collected easily and almost every where in the traffic network, it is not really representative of the congestion state due to the penetration rate. Its counter part MLD is accurate when determining the amount of vehicles circulating at specific spots, but extending this mechanism of measurement to the whole network is expensive.</li>
+<li>The use of models like the LWR model may be useful for providing extra information to retrieve the congestion state of the network.</li>
+</ul>
+<hr />
+<div id="objectives-2" class="section level2 unnumbered">
+<h2>Objectives</h2>
+<p>The main objective of this project is to:</p>
+<ol style="list-style-type: decimal">
+<li>Study the LWR model and in particular its network counter part.</li>
+<li>Obtain and simulate a macroscopic traffic model for a urban network.</li>
+<li>Create and design an estimator in order to retrieve the state of the network based on heterogenous measurements.</li>
+<li>Compare the behavior and performance of the estimator under multiple situations.</li>
+</ol>
+</div>
+<div id="description-2" class="section level2 unnumbered">
+<h2>Description</h2>
+<div id="task-1-modeling-1" class="section level3 unnumbered">
+<h3>Task 1: Modeling</h3>
+<div id="context-9" class="section level4 unnumbered">
+<h4>Context</h4>
+</div>
+<div id="questions-8" class="section level4 unnumbered">
+<h4>Questions</h4>
+</div>
+<div id="expected-outcomes-8" class="section level4 unnumbered">
+<h4>Expected outcomes</h4>
+<hr />
+</div>
+</div>
+<div id="task-2-simulation-1" class="section level3 unnumbered">
+<h3>Task 2: Simulation</h3>
+<div id="context-10" class="section level4 unnumbered">
+<h4>Context</h4>
+</div>
+<div id="questions-9" class="section level4 unnumbered">
+<h4>Questions</h4>
+</div>
+<div id="expected-outcomes-9" class="section level4 unnumbered">
+<h4>Expected outcomes</h4>
+<hr />
+</div>
+</div>
+<div id="task-3-estimation-algorithm" class="section level3 unnumbered">
+<h3>Task 3: Estimation algorithm</h3>
+<div id="context-11" class="section level4 unnumbered">
+<h4>Context</h4>
+</div>
+<div id="questions-10" class="section level4 unnumbered">
+<h4>Questions</h4>
+</div>
+<div id="expected-outcomes-10" class="section level4 unnumbered">
+<h4>Expected outcomes</h4>
+<hr />
+</div>
+</div>
+<div id="task-4-estimation-performance" class="section level3 unnumbered">
+<h3>Task 4: Estimation performance</h3>
+<div id="context-12" class="section level4 unnumbered">
+<h4>Context</h4>
+</div>
+<div id="questions-11" class="section level4 unnumbered">
+<h4>Questions</h4>
+</div>
+<div id="expected-outcomes-11" class="section level4 unnumbered">
+<h4>Expected outcomes</h4>
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">plot</span>(cars)  <span class="co"># a scatterplot</span></a></code></pre></div>
 <div class="figure"><span id="fig:foo"></span>
@@ -205,6 +280,9 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta)\\
 \sqrt{n}[g(X_{n})-g(\theta)] &amp;= g&#39;\left({\tilde{\theta}}\right)
   \sqrt{n}[X_{n}-\theta ] \tag{6}
 \end{align}\]</span></p>
+</div>
+</div>
+</div>
 <div id="sources-2" class="section level2 unnumbered">
 <h2>Sources</h2>
 <p>For more details on the project please check:</p>
@@ -221,11 +299,11 @@ g(X_{n}) &amp;= g(\theta)+g&#39;({\tilde{\theta}})(X_{n}-\theta)\\
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Ladino2018">
-<p>Ladino, Andres, Carlos Canudas-de-wit, Alain Kibangou, Hassen Fourati, and Martin Rodriguez. 2018. “Density and flow reconstruction in urban traffic networks using heterogeneous data sources.” In <em>2018 European Control Conference, Ecc 2018</em>, edited by IEEE. Limasol, Chyprus.</p>
-</div>
 <div id="ref-Lovisari2016">
 <p>Lovisari, E., Carlos Canudas-de-wit, and Alain Y Kibangou. 2016. “Density/Flow reconstruction via heterogeneous sources and Optimal Sensor Placement in road networks.” <em>Transportation Research Part C: Emerging Technologies</em> 69: 451–76. <a href="https://doi.org/10.1016/j.trc.2016.06.019">https://doi.org/10.1016/j.trc.2016.06.019</a>.</p>
+</div>
+<div id="ref-Ladino2018">
+<p>Ladino, Andres, Carlos Canudas-de-wit, Alain Kibangou, Hassen Fourati, and Martin Rodriguez. 2018. “Density and flow reconstruction in urban traffic networks using heterogeneous data sources.” In <em>2018 European Control Conference, Ecc 2018</em>, edited by IEEE. Limasol, Chyprus.</p>
 </div>
 </div>
             </section>
