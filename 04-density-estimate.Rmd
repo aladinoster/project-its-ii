@@ -78,6 +78,8 @@ knitr::include_graphics("images/p1-01-network.png")
 
 ### Task 2: Simulation {-}
 
+Dynamic simulation  of open loop traffic networks. For this task be sure to review already implemented simulations available at [Link](https://github.com/andres-ladino-ifsttar/traffic-macrosimulator). Get familiar with the code here developed before you enter into details of implementation. 
+
 #### Context {-}
 
 #### Questions {-}
