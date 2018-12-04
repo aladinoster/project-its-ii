@@ -189,12 +189,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Figure 5: Example of a vehicle platoon.
 </p>
 </div>
-<p>The objective illustrated in <a href="project-2-vehicle-platooning.html#fig:cav">5</a> is to control the  between two single vehicles in a formation of multiple vehicles. This project is inspired in works presented on <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019:ISTTT">2019</a><a href="#ref-Duret2019:ISTTT">a</a>)</span> but more information about platoons can be found at <span class="citation">(Ali, Garcia, and Martinet <a href="#ref-Ali2015:ITSM">2015</a>)</span>.</p>
+<p>The objective illustrated in Figure <a href="project-2-vehicle-platooning.html#fig:cav">5</a> is to control the <em>headway space</em> between two single vehicles in a formation of multiple vehicles. This project is inspired in works presented on <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019:ISTTT">2019</a><a href="#ref-Duret2019:ISTTT">a</a>)</span>, <span class="citation">(Wang et al. <a href="#ref-Meng2014b:TR-C">2014</a>)</span> but more information about platoons can be found at <span class="citation">(Ali, Garcia, and Martinet <a href="#ref-Ali2015:ITSM">2015</a>)</span>.</p>
 <div id="objectives-1" class="section level2 unnumbered">
 <h2>Objectives</h2>
 <p>The main objective of this project is to:</p>
 <ol style="list-style-type: decimal">
-<li>Study the fundamental problem of string stability.</li>
+<li>Study and understand the fundamental problem of string stability.</li>
 <li>Obtain and create a dynamic model for vehicle platoons and asociate its parameters with traffic theory.</li>
 <li>Create and design a control strategy for the headway space and analyze its behavior.</li>
 <li>Compare and analyze the behavior of parameter setups for variations of the proposed control strategy</li>
@@ -225,7 +225,7 @@ Figure 5: Example of a vehicle platoon.
 <h4>Expected outcomes</h4>
 <ul>
 <li>Present a brief summary on the motivations to create vehicle platoons and the main existing models that can be developed for this purpose.</li>
-<li>Based on the work of <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019:ISTTT">2019</a><a href="#ref-Duret2019:ISTTT">a</a>)</span>, <span class="citation">(Wang et al. <a href="#ref-Meng2014b:TR-C">2014</a>)</span> determine writedown the state equations for a platoon model of 4 vehicles of 2nd and 3rd order.<br />
+<li>Based on the work of <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019:ISTTT">2019</a><a href="#ref-Duret2019:ISTTT">a</a>)</span>, <span class="citation">(Wang et al. <a href="#ref-Meng2014b:TR-C">2014</a>)</span> determine writedown the state equations for a platoon model of 4 vehicles of <em>2nd order</em> and <em>3rd order</em>.<br />
 </li>
 <li>Determine the stability properties of the model. Stability properties are associated to the location of zeros and poles of the transfer function of the model or eigen values of the matrix <a href="https://en.wikipedia.org/wiki/Stability_theory">See more</a></li>
 </ul>
@@ -244,19 +244,20 @@ Figure 5: Example of a vehicle platoon.
 Figure 6: Open loop system.
 </p>
 </div>
+<p>For the case of a platoon vehicle the input in <em>open</em> loop are the accelerations of all vehicles. It seems logical that if a vehicle modifies its speed from a specific value the space between two vehicles. We are going to verify this behavior at simulation level.</p>
 </div>
 <div id="questions-5" class="section level4 unnumbered">
 <h4>Questions</h4>
 <ul>
-<li>Which is the response of spacing of all vehicles when an impulse of deceleration of amplitude <span class="math inline">\(u = 0.1m/s^2\)</span> is performed over the second vehicle?</li>
-<li>Are there any differences between the</li>
-<li>Consider the <em>time engine</em> constant in the 3rd order model. What is the effect of this vale in the dynamic acceleration/ decceleration of the system?</li>
+<li>Which is the response of spacing of all vehicles when an impulse of deceleration of amplitude <span class="math inline">\(u = 0.1m/s^2\)</span> is performed over the second vehicle? *</li>
+<li>Are there any differences between the spacings when applying the decceleration over a <em>2nd order</em> model or a <em>3rd order model</em>?</li>
+<li>Consider the <em>time engine</em> constant in the <em>3rd order</em> model. What is the effect of this vale in the dynamic acceleration/ decceleration of the system?</li>
 </ul>
 </div>
 <div id="expected-outcomes-5" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
 <ul>
-<li>Create a simulation of the 2nd /3rd order platoon vehicle models in which the inputs are the accelerations of all vehicles and the outcomes are the headway spaces, and speeds of each vehicle.</li>
+<li>Create a simulation of the <em>2nd /3rd order</em> platoon vehicle models in which the inputs are the accelerations of all vehicles and the outcomes are the headway spaces, and speeds of each vehicle.</li>
 <li>Retrieve the dynamic response of the headway space for the 2nd order/ 3rd order for an impulse of <span class="math inline">\(u = 0.1m/s^2\)</span></li>
 <li>Obtain the trajectories in space and time for the platoon of 4 vehicles.</li>
 </ul>
@@ -275,6 +276,7 @@ Figure 6: Open loop system.
 Figure 7: Closed loop system.
 </p>
 </div>
+<p>Whithin the Figure <a href="project-2-vehicle-platooning.html#fig:closedcav">7</a> the main objective is to create a closed loop that provides information in order to take the decision. These strategies have been already studied in literature. <span class="citation">(Wang et al. <a href="#ref-Meng2014b:TR-C">2014</a>)</span>, <span class="citation">(Ali, Garcia, and Martinet <a href="#ref-Ali2015:ITSM">2015</a>)</span>.</p>
 </div>
 <div id="questions-6" class="section level4 unnumbered">
 <h4>Questions</h4>
@@ -338,14 +340,14 @@ Figure 8: Typical dynamical response for a 2nd order model
 <div id="ref-Duret2019:ISTTT">
 <p>Duret, Aurelien, Meng Wang, and Andres Ladino. 2019a. “A Hierarchical Approach for Splitting Truck Platoons Near Network Discontinuities,” no. July: Submitted.</p>
 </div>
+<div id="ref-Meng2014b:TR-C">
+<p>Wang, Meng, Winnie Daamen, Serge P. Hoogendoorn, and Bart van Arem. 2014. “Rolling horizon control framework for driver assistance systems. Part II: Cooperative sensing and cooperative control.” <em>Transportation Research Part C</em> 40: 290–311. <a href="https://doi.org/10.1016/j.trc.2013.11.024">https://doi.org/10.1016/j.trc.2013.11.024</a>.</p>
+</div>
 <div id="ref-Ali2015:ITSM">
 <p>Ali, Alan, Gaetan Garcia, and Philippe Martinet. 2015. “The flatbed platoon towing model for safe and dense platooning on highways.” <em>IEEE Intelligent Transportation Systems Magazine</em> 7 (1): 58–68. <a href="https://doi.org/10.1109/MITS.2014.2328670">https://doi.org/10.1109/MITS.2014.2328670</a>.</p>
 </div>
 <div id="ref-Turri2017">
 <p>Turri, Valerio, Bart Besselink, and Karl H. Johansson. 2017. “Cooperative Look-Ahead Control for Fuel-Efficient and Safe Heavy-Duty Vehicle Platooning.” <em>IEEE Transactions on Control Systems Technology</em> 25 (1): 12–28. <a href="https://doi.org/10.1109/TCST.2016.2542044">https://doi.org/10.1109/TCST.2016.2542044</a>.</p>
-</div>
-<div id="ref-Meng2014b:TR-C">
-<p>Wang, Meng, Winnie Daamen, Serge P. Hoogendoorn, and Bart van Arem. 2014. “Rolling horizon control framework for driver assistance systems. Part II: Cooperative sensing and cooperative control.” <em>Transportation Research Part C</em> 40: 290–311. <a href="https://doi.org/10.1016/j.trc.2013.11.024">https://doi.org/10.1016/j.trc.2013.11.024</a>.</p>
 </div>
 <div id="ref-Duret2019">
 <p>Duret, Aurelien, Meng Wang, and Andres Ladino. 2019b. “A Hierarchical Approach for Splitting Truck Platoons Near Network Discontinuities.” <em>Submitted to 23rd International Symposium on Transportation and Traffic Theory</em>.</p>

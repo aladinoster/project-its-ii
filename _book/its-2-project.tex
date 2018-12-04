@@ -695,13 +695,14 @@ fuel consumption. A platoon of vehicles can be seen as:
 \caption{Example of a vehicle platoon.}\label{fig:cav}
 \end{figure}
 
-The objective illustrated in \ref{fig:cav} is to control the
+The objective illustrated in Figure \ref{fig:cav} is to control the
 \emph{headway space} between two single vehicles in a formation of
 multiple vehicles. This project is inspired in works presented on
 (Duret, Wang, and Ladino
-\protect\hyperlink{ref-Duret2019:ISTTT}{2019}\protect\hyperlink{ref-Duret2019:ISTTT}{a})
-but more information about platoons can be found at (Ali, Garcia, and
-Martinet \protect\hyperlink{ref-Ali2015:ITSM}{2015}).
+\protect\hyperlink{ref-Duret2019:ISTTT}{2019}\protect\hyperlink{ref-Duret2019:ISTTT}{a}),
+(Wang et al. \protect\hyperlink{ref-Meng2014b:TR-C}{2014}) but more
+information about platoons can be found at (Ali, Garcia, and Martinet
+\protect\hyperlink{ref-Ali2015:ITSM}{2015}).
 
 \hypertarget{objectives-1}{%
 \section*{Objectives}\label{objectives-1}}
@@ -713,7 +714,7 @@ The main objective of this project is to:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Study the fundamental problem of string stability.
+  Study and understand the fundamental problem of string stability.
 \item
   Obtain and create a dynamic model for vehicle platoons and asociate
   its parameters with traffic theory.
@@ -794,8 +795,8 @@ systems, e.g.~acceleration when modifying the state of a vehicle.
   Based on the work of (Duret, Wang, and Ladino
   \protect\hyperlink{ref-Duret2019:ISTTT}{2019}\protect\hyperlink{ref-Duret2019:ISTTT}{a}),
   (Wang et al. \protect\hyperlink{ref-Meng2014b:TR-C}{2014}) determine
-  writedown the state equations for a platoon model of 4 vehicles of 2nd
-  and 3rd order.\\
+  writedown the state equations for a platoon model of 4 vehicles of
+  \emph{2nd order} and \emph{3rd order}.\\
 \item
   Determine the stability properties of the model. Stability properties
   are associated to the location of zeros and poles of the transfer
@@ -830,6 +831,11 @@ control input.
 \caption{Open loop system.}\label{fig:opencav}
 \end{figure}
 
+For the case of a platoon vehicle the input in \emph{open} loop are the
+accelerations of all vehicles. It seems logical that if a vehicle
+modifies its speed from a specific value the space between two vehicles.
+We are going to verify this behavior at simulation level.
+
 \hypertarget{questions-5}{%
 \subsubsection*{Questions}\label{questions-5}}
 \addcontentsline{toc}{subsubsection}{Questions}
@@ -839,13 +845,15 @@ control input.
 \item
   Which is the response of spacing of all vehicles when an impulse of
   deceleration of amplitude \(u = 0.1m/s^2\) is performed over the
-  second vehicle?
+  second vehicle? *
 \item
-  Are there any differences between the
+  Are there any differences between the spacings when applying the
+  decceleration over a \emph{2nd order} model or a \emph{3rd order
+  model}?
 \item
-  Consider the \emph{time engine} constant in the 3rd order model. What
-  is the effect of this vale in the dynamic acceleration/ decceleration
-  of the system?
+  Consider the \emph{time engine} constant in the \emph{3rd order}
+  model. What is the effect of this vale in the dynamic acceleration/
+  decceleration of the system?
 \end{itemize}
 
 \hypertarget{expected-outcomes-5}{%
@@ -855,9 +863,9 @@ control input.
 \begin{itemize}
 \tightlist
 \item
-  Create a simulation of the 2nd /3rd order platoon vehicle models in
-  which the inputs are the accelerations of all vehicles and the
-  outcomes are the headway spaces, and speeds of each vehicle.
+  Create a simulation of the \emph{2nd /3rd order} platoon vehicle
+  models in which the inputs are the accelerations of all vehicles and
+  the outcomes are the headway spaces, and speeds of each vehicle.
 \item
   Retrieve the dynamic response of the headway space for the 2nd order/
   3rd order for an impulse of \(u = 0.1m/s^2\)
@@ -891,6 +899,12 @@ terms of accelerations of vehicles as shown in the Figure
 
 \caption{Closed loop system.}\label{fig:closedcav}
 \end{figure}
+
+Whithin the Figure \ref{fig:closedcav} the main objective is to create a
+closed loop that provides information in order to take the decision.
+These strategies have been already studied in literature. (Wang et al.
+\protect\hyperlink{ref-Meng2014b:TR-C}{2014}), (Ali, Garcia, and
+Martinet \protect\hyperlink{ref-Ali2015:ITSM}{2015}).
 
 \hypertarget{questions-6}{%
 \subsubsection*{Questions}\label{questions-6}}

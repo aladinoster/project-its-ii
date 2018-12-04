@@ -8,13 +8,13 @@ The main objective of this project is to design a controller for a platoon of ve
 knitr::include_graphics("images/p2-cavs.png")
 ```
 
-The objective illustrated in \@ref(fig:cav) is to control the \emph{headway space} between two single vehicles in a formation of multiple vehicles. This project is inspired in works presented on [@Duret2019:ISTTT] but more information about platoons can be found at [@Ali2015:ITSM].
+The objective illustrated in Figure \@ref(fig:cav) is to control the *headway space* between two single vehicles in a formation of multiple vehicles. This project is inspired in works presented on [@Duret2019:ISTTT], [@Meng2014b:TR-C] but more information about platoons can be found at [@Ali2015:ITSM].
 
 ## Objectives {-}
 
 The main objective of this project is to:
 
-1. Study the fundamental problem of string stability. 
+1. Study and understand the fundamental problem of string stability. 
 2. Obtain and create a dynamic model for vehicle platoons and asociate its parameters with traffic theory. 
 3. Create and design a control strategy for the headway space and analyze its behavior. 
 4. Compare and analyze the behavior of parameter setups for variations of the proposed control strategy
@@ -45,7 +45,7 @@ where $x(t), u(t)$ correspond to the state vector, and the control vector of the
 #### Expected outcomes {-}
 
 * Present a brief summary on the motivations to create vehicle platoons and the main existing models that can be developed for this purpose.
-* Based on the work of [@Duret2019:ISTTT], [@Meng2014b:TR-C] determine writedown the state equations for a platoon model of 4 vehicles of 2nd and 3rd order.  
+* Based on the work of [@Duret2019:ISTTT], [@Meng2014b:TR-C] determine writedown the state equations for a platoon model of 4 vehicles of *2nd order* and *3rd order*.  
 * Determine the stability properties of the model. Stability properties are associated to the location of zeros and poles of the transfer function of the model or eigen values of the matrix [See more](https://en.wikipedia.org/wiki/Stability_theory)
 
 ***
@@ -62,15 +62,17 @@ One of the first studies in terms of analyzing the properties of a dynamical sys
 knitr::include_graphics("images/p2-02-control-open.png")
 ```
 
+For the case of a platoon vehicle the input in *open* loop are the accelerations of all vehicles. It seems logical that if a vehicle modifies its speed from a specific value the space between two vehicles. We are going to verify this behavior at simulation level. 
+
 #### Questions {-}
 
-* Which is the response of spacing of all vehicles when an impulse of deceleration of amplitude $u = 0.1m/s^2$ is performed over the second vehicle? 
-* Are there any differences between the 
-* Consider the *time engine* constant in the 3rd order model. What is the effect of this vale in the dynamic acceleration/ decceleration of the system? 
+* Which is the response of spacing of all vehicles when an impulse of deceleration of amplitude $u = 0.1m/s^2$ is performed over the second vehicle? *
+* Are there any differences between the spacings when applying the decceleration over a *2nd order* model or a *3rd order model*? 
+* Consider the *time engine* constant in the *3rd order* model. What is the effect of this vale in the dynamic acceleration/ decceleration of the system? 
 
 #### Expected outcomes {-}
 
-* Create a simulation of the 2nd /3rd order platoon vehicle models in which the inputs are the accelerations of all vehicles and the outcomes are the headway spaces, and speeds of each vehicle. 
+* Create a simulation of the *2nd /3rd order* platoon vehicle models in which the inputs are the accelerations of all vehicles and the outcomes are the headway spaces, and speeds of each vehicle. 
 * Retrieve the dynamic response of the headway space for the 2nd order/ 3rd order for an impulse of  $u = 0.1m/s^2$
 * Obtain the trajectories in space and time for the platoon of 4 vehicles.
 
@@ -88,6 +90,7 @@ In order to control the system a feedback loop should be introduced in terms of 
 knitr::include_graphics("images/p2-03-closed-loop.png")
 ```
 
+Whithin the Figure \@ref(fig:closedcav)  the main objective is to create a closed loop that provides information in order to take the decision. These strategies have been already studied in literature. [@Meng2014b:TR-C], [@Ali2015:ITSM].
 
 #### Questions {-}
 
