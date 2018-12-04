@@ -29,7 +29,7 @@ Consider the dynamical model presented in [@Duret2019:ISTTT], [@Turri2017] where
 
 #### Context {-}
 
-In general the platoon problem is a *dynamic control problem* where the objective is to regulate or mantain the value of a specific variable within the system at a desired level. In order to produce this regulation a *controller* is requrired and in most of the cases cases there is always a way to express the dynamical model in the following form: 
+In general the platoon problem is a *dynamic control problem* where the objective is to regulate or mantain the value of a specific variable within the system at a desired level. In order to produce this regulation a *controller* is required and in most of the cases there is always a way to express the dynamical model in the following form: 
 
 \begin{align}
 \dot{x}(t) = f(x(t), u(t)) (\#eq:platoon)
@@ -40,14 +40,14 @@ where $x(t), u(t)$ correspond to the state vector, and the control vector of the
 #### Questions {-}
 
 * What are the main goals of platoon strategies, and how they can improve the traffic in future? 
-* Create a model for a platoon of 4 vehicles that considers a simple dynamic model of 2nd order and a 3rd order one. **Note: Consider for this case a model in which no drag is present within the model.**. This model can be written as in  \@ref(eq:platoon) where the stability can be analyzed. 
+* Create a model for a platoon of 4 vehicles that considers a simple dynamic model of 2nd order and a 3rd order one. **Note: Consider for this case a model in which no drag is present within the model**. This model can be written as in  \@ref(eq:platoon) where the stability can be analyzed. 
 * Which could be the traffic parameters in this kind of models? 
  
 
 #### Expected outcomes {-}
 
 * Present a brief summary on the motivations to create vehicle platoons and the main existing models that can be developed for this purpose.
-* Based on the work of [@Duret2019:ISTTT], [@Meng2014b:TR-C] determine writedown the state equations for a platoon model of 4 vehicles of *2nd order* and *3rd order*.  
+* Based on the work of [@Duret2019:ISTTT], [@Meng2014b:TR-C] determine and write down the state equations for a platoon model of 4 vehicles of *2nd order* and *3rd order*.  
 * Determine the stability properties of the model. Stability properties are associated to the location of zeros and poles of the transfer function of the model or eigen values of the matrix [See more](https://en.wikipedia.org/wiki/Stability_theory)
 
 ***
@@ -69,8 +69,8 @@ For the case of a platoon vehicle the input in *open* loop are the accelerations
 #### Questions {-}
 
 * Which is the response of spacing of all vehicles when an impulse of deceleration of amplitude $u = 0.1m/s^2$ is performed over the second vehicle? *
-* Are there any differences between the spacings when applying the decceleration over a *2nd order* model or a *3rd order model*? 
-* Consider the *time engine* constant in the *3rd order* model. What is the effect of this vale in the dynamic acceleration/ decceleration of the system? 
+* Are there any differences between the spacings when applying the deceleration over a *2nd order* model or a *3rd order model*? 
+* Consider the *time engine* constant in the *3rd order* model. What is the effect of this value in the dynamic acceleration/ deceleration of the system? 
 
 #### Expected outcomes {-}
 
