@@ -181,24 +181,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="project-2-vehicle-platooning" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Project 2: Vehicle Platooning</h1>
-<p>The main objective of this project is to design a controller for a platoon of vehicles in order to optimize the flow
-and reduce the fuel consumption. A platoon of vehicles can be seen as:</p>
+<p>The main objective of this project is to design a controller for a platoon of vehicles in order to optimize the traffic flow and reduce the fuel consumption. A platoon of vehicles can be seen as:</p>
+
+<div class="figure" style="text-align: center"><span id="fig:cav"></span>
+<img src="images/p2-cavs.png" alt="Example of a vehicle platoon."  />
+<p class="caption">
+Figure 2.1: Example of a vehicle platoon.
+</p>
+</div>
+<p>The objective illustrated in <a href="project-2-vehicle-platooning.html#fig:cav">2.1</a> is to control the  between two single vehicles in a formation of multiple vehicles. This project is inspired in works presented on <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019:ISTTT">2019</a><a href="#ref-Duret2019:ISTTT">a</a>)</span> but more information about platoons can be found at <span class="citation">(Ali, Garcia, and Martinet <a href="#ref-Ali2015:ITSM">2015</a>)</span>.</p>
 <div id="objectives-1" class="section level2 unnumbered">
 <h2>Objectives</h2>
-<p>This project consists in works based on <span class="citation">(Grandinetti, Canudas-de-wit, and Garin <a href="#ref-Grandinetti2015">2015</a>)</span></p>
+<p>The main objective of this project is to:</p>
+<ol style="list-style-type: decimal">
+<li>Study the fundamental problem of string stability.</li>
+<li>Obtain and create a dynamic model for vehicle platoons and asociate its parameters with traffic theory.</li>
+<li>Create and design a control strategy for the headway space and analyze its behavior.</li>
+<li>Compare and analyze the behavior of parameter setups for variations of the proposed control strategy</li>
+</ol>
 </div>
 <div id="description-1" class="section level2 unnumbered">
 <h2>Description</h2>
 <div id="task-1-platoon-modeling" class="section level3 unnumbered">
 <h3>Task 1: Platoon modeling</h3>
+<p>Consider the dynamical model presented in <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019:ISTTT">2019</a><a href="#ref-Duret2019:ISTTT">a</a>)</span>, <span class="citation">(Turri, Besselink, and Johansson <a href="#ref-Turri2017">2017</a>)</span> where the problem of truck platooning is detailed.</p>
 <div id="context-5" class="section level4 unnumbered">
 <h4>Context</h4>
+<p>In general the platoon problem is a <em>dynamic control problem</em> where the objective is to regulate or mantain the value of a specific variable within the system at a desired level. In order to produce this regulation a <em>controller</em> is requrired and in most of the cases cases there is always a way to express the dynamical model in the following form:</p>
+<p><span class="math display" id="eq:platoon">\[\begin{align}
+\dot{x}(t) = f(x(t), u(t)) \tag{2.1}
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(x(t), u(t)\)</span> correspond to the state vector, and the control vector of the system. In general a system describing this</p>
 </div>
 <div id="questions-4" class="section level4 unnumbered">
 <h4>Questions</h4>
+<ul>
+<li>What are the main goals of platoon strategies, and how they can improve the traffic in future?</li>
+<li>Create a model for a platoon of 6 vehicles that considers a simple dynamic model of 2nd order. <strong>Note: Consider for this case a model in which no drag is present within the model.</strong>. This model can be written as in <a href="project-2-vehicle-platooning.html#eq:platoon">(2.1)</a> where the stability can be analyzed.</li>
+<li>Which could be the traffic parameters in this kind of models?</li>
+</ul>
 </div>
 <div id="expected-outcomes-4" class="section level4 unnumbered">
 <h4>Expected outcomes</h4>
+<ul>
+<li>Present a brief summary on the motivations to create vehicle platoons and the main existing models that can be developed for this purpose.</li>
+<li>Based on the work of <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019:ISTTT">2019</a><a href="#ref-Duret2019:ISTTT">a</a>)</span>, <span class="citation">(Wang et al. <a href="#ref-Meng2014b:TR-C">2014</a>)</span> determine writedown the state equation for a platoon model of 4 vehicles.</li>
+<li>Determine the stability properties of the model. Stability properties are associated to the location of zeros and poles of the transfer function of the model or eigen values of the matrix <a href="https://en.wikipedia.org/wiki/Stability_theory">See more</a></li>
+</ul>
+<hr />
 </div>
 </div>
 <div id="task-2-open-loop-simulation" class="section level3 unnumbered">
@@ -218,6 +248,7 @@ and reduce the fuel consumption. A platoon of vehicles can be seen as:</p>
 </div>
 <div id="task-3-vehicle-platoon-control" class="section level3 unnumbered">
 <h3>Task 3: Vehicle platoon control</h3>
+<hr />
 <div id="context-7" class="section level4 unnumbered">
 <h4>Context</h4>
 </div>
@@ -245,18 +276,27 @@ and reduce the fuel consumption. A platoon of vehicles can be seen as:</p>
 <h2>Sources</h2>
 <ul>
 <li><p><a href="https://github.com/aladinoster/density-reconstruction">Simulation results - Github</a></p></li>
-<li><p>Check <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019">2019</a>)</span> available <a href="http://bit.ly/Hierarchical_ISTTT">Link</a></p></li>
+<li><p>Check <span class="citation">(Duret, Wang, and Ladino <a href="#ref-Duret2019">2019</a><a href="#ref-Duret2019">b</a>)</span> available <a href="http://bit.ly/Hierarchical_ISTTT">Link</a></p></li>
 </ul>
 
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-Grandinetti2015">
-<p>Grandinetti, Pietro, Carlos Canudas-de-wit, and Federica Garin. 2015. “An efficient one-step-ahead optimal control for urban signalized traffic networks based on an averaged Cell-Transmission Model.” In <em>2015 European Control Conference (Ecc)</em>, 3478–83. Vienna, Austria: IEEE. <a href="https://doi.org/10.1109/ECC.2015.7331072">https://doi.org/10.1109/ECC.2015.7331072</a>.</p>
+<div id="ref-Duret2019:ISTTT">
+<p>Duret, Aurelien, Meng Wang, and Andres Ladino. 2019a. “A Hierarchical Approach for Splitting Truck Platoons Near Network Discontinuities,” no. July: Submitted.</p>
+</div>
+<div id="ref-Ali2015:ITSM">
+<p>Ali, Alan, Gaetan Garcia, and Philippe Martinet. 2015. “The flatbed platoon towing model for safe and dense platooning on highways.” <em>IEEE Intelligent Transportation Systems Magazine</em> 7 (1): 58–68. <a href="https://doi.org/10.1109/MITS.2014.2328670">https://doi.org/10.1109/MITS.2014.2328670</a>.</p>
+</div>
+<div id="ref-Turri2017">
+<p>Turri, Valerio, Bart Besselink, and Karl H. Johansson. 2017. “Cooperative Look-Ahead Control for Fuel-Efficient and Safe Heavy-Duty Vehicle Platooning.” <em>IEEE Transactions on Control Systems Technology</em> 25 (1): 12–28. <a href="https://doi.org/10.1109/TCST.2016.2542044">https://doi.org/10.1109/TCST.2016.2542044</a>.</p>
+</div>
+<div id="ref-Meng2014b:TR-C">
+<p>Wang, Meng, Winnie Daamen, Serge P. Hoogendoorn, and Bart van Arem. 2014. “Rolling horizon control framework for driver assistance systems. Part II: Cooperative sensing and cooperative control.” <em>Transportation Research Part C</em> 40: 290–311. <a href="https://doi.org/10.1016/j.trc.2013.11.024">https://doi.org/10.1016/j.trc.2013.11.024</a>.</p>
 </div>
 <div id="ref-Duret2019">
-<p>Duret, Aurelien, Meng Wang, and Andres Ladino. 2019. “A Hierarchical Approach for Splitting Truck Platoons Near Network Discontinuities.” <em>Submitted to 23rd International Symposium on Transportation and Traffic Theory</em>.</p>
+<p>Duret, Aurelien, Meng Wang, and Andres Ladino. 2019b. “A Hierarchical Approach for Splitting Truck Platoons Near Network Discontinuities.” <em>Submitted to 23rd International Symposium on Transportation and Traffic Theory</em>.</p>
 </div>
 </div>
             </section>

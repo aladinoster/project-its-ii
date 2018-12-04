@@ -66,6 +66,8 @@ The network of Figure \@ref(fig:city) represents a regular corridor in a city li
 
 * Define the set of parameters for the traffic network, notably those related to the fundamental diagram as well as the traffic light signal timings. Consider a fixed setup of this parameters for the moment and overall explain the reason of the choice.  
 
+***
+
 ### Task 2: Simulation {-}
 
 Dynamic simulation  of open loop traffic networks. For this task be sure to review already implemented simulations available at [Link](https://github.com/andres-ladino-ifsttar/traffic-macrosimulator). Get familiar with the code here developed before you enter into details of implementation. 
@@ -98,6 +100,8 @@ knitr::include_graphics("images/p1-02-flows.png")
 
 * Specify a second set of parameters for *duty cycle* that could improve the performance of the network with respect to the $50\%$ case. Justify the reason of your choice and verify in results the desired behavior. 
 
+***
+
 ### Task 3: Control strategy {-}
 
 For this task we aim to consider the *duty cycle* as a control input variable to regulate the flow within the traffic network. In this case take into account that the decision variable needs somehow to be determined dynamically via a control algorithm. 
@@ -127,6 +131,8 @@ As it is illustrated in [@Grandinetti2016], in Eq. \@ref(eq:avgu) is easier to d
 * Apply the controller over different versions of the model notably *averaged* and *switched*
 
 * Compare the open loop situation with the closed loop situation and provide conclussions on the control performance. 
+
+***
 
 ### Task 4: Performance evaluation {-}
 

@@ -205,6 +205,8 @@ collect information regarding the traffic condition, perform estimation
 of unknown traffic states and decide on specific actions to modify this
 state.
 
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
 \hypertarget{projects}{%
 \section*{Projects}\label{projects}}
 \addcontentsline{toc}{section}{Projects}
@@ -236,6 +238,8 @@ activities:
   project is to study how multiple sources of information can be
   integrated to reconstruct traffic variables within a city.
 \end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{general-objectives}{%
 \section*{General Objectives}\label{general-objectives}}
@@ -462,6 +466,8 @@ network. It is important to highlight that for the proposed network
   overall explain the reason of the choice.
 \end{itemize}
 
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
 \hypertarget{task-2-simulation}{%
 \subsection*{Task 2: Simulation}\label{task-2-simulation}}
 \addcontentsline{toc}{subsection}{Task 2: Simulation}
@@ -534,6 +540,8 @@ Figure\ref{fig:flow}.
   desired behavior.
 \end{itemize}
 
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+
 \hypertarget{task-3-control-strategy}{%
 \subsection*{Task 3: Control strategy}\label{task-3-control-strategy}}
 \addcontentsline{toc}{subsection}{Task 3: Control strategy}
@@ -591,6 +599,8 @@ binary character.
   Compare the open loop situation with the closed loop situation and
   provide conclussions on the control performance.
 \end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{task-4-performance-evaluation}{%
 \subsection*{Task 4: Performance
@@ -669,15 +679,49 @@ please check:
 Platooning}\label{project-2-vehicle-platooning}}
 
 The main objective of this project is to design a controller for a
-platoon of vehicles in order to optimize the flow and reduce the fuel
-consumption. A platoon of vehicles can be seen as:
+platoon of vehicles in order to optimize the traffic flow and reduce the
+fuel consumption. A platoon of vehicles can be seen as:
+
+
+
+\begin{figure}
+
+{\centering \includegraphics{images/p2-cavs} 
+
+}
+
+\caption{Example of a vehicle platoon.}\label{fig:cav}
+\end{figure}
+
+The objective illustrated in \ref{fig:cav} is to control the
+\emph{headway space} between two single vehicles in a formation of
+multiple vehicles. This project is inspired in works presented on
+(Duret, Wang, and Ladino
+\protect\hyperlink{ref-Duret2019:ISTTT}{2019}\protect\hyperlink{ref-Duret2019:ISTTT}{a})
+but more information about platoons can be found at (Ali, Garcia, and
+Martinet \protect\hyperlink{ref-Ali2015:ITSM}{2015}).
 
 \hypertarget{objectives-1}{%
 \section*{Objectives}\label{objectives-1}}
 \addcontentsline{toc}{section}{Objectives}
 
-This project consists in works based on (Grandinetti, Canudas-de-wit,
-and Garin \protect\hyperlink{ref-Grandinetti2015}{2015})
+The main objective of this project is to:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Study the fundamental problem of string stability.
+\item
+  Obtain and create a dynamic model for vehicle platoons and asociate
+  its parameters with traffic theory.
+\item
+  Create and design a control strategy for the headway space and analyze
+  its behavior.
+\item
+  Compare and analyze the behavior of parameter setups for variations of
+  the proposed control strategy
+\end{enumerate}
 
 \hypertarget{description-1}{%
 \section*{Description}\label{description-1}}
@@ -687,17 +731,70 @@ and Garin \protect\hyperlink{ref-Grandinetti2015}{2015})
 \subsection*{Task 1: Platoon modeling}\label{task-1-platoon-modeling}}
 \addcontentsline{toc}{subsection}{Task 1: Platoon modeling}
 
+Consider the dynamical model presented in (Duret, Wang, and Ladino
+\protect\hyperlink{ref-Duret2019:ISTTT}{2019}\protect\hyperlink{ref-Duret2019:ISTTT}{a}),
+(Turri, Besselink, and Johansson
+\protect\hyperlink{ref-Turri2017}{2017}) where the problem of truck
+platooning is detailed.
+
 \hypertarget{context-5}{%
 \subsubsection*{Context}\label{context-5}}
 \addcontentsline{toc}{subsubsection}{Context}
+
+In general the platoon problem is a \emph{dynamic control problem} where
+the objective is to regulate or mantain the value of a specific variable
+within the system at a desired level. In order to produce this
+regulation a \emph{controller} is requrired and in most of the cases
+cases there is always a way to express the dynamical model in the
+following form:
+
+\begin{align}
+\dot{x}(t) = f(x(t), u(t)) \label{eq:platoon}
+\end{align}
+
+where \(x(t), u(t)\) correspond to the state vector, and the control
+vector of the system. In general a system describing this
 
 \hypertarget{questions-4}{%
 \subsubsection*{Questions}\label{questions-4}}
 \addcontentsline{toc}{subsubsection}{Questions}
 
+\begin{itemize}
+\tightlist
+\item
+  What are the main goals of platoon strategies, and how they can
+  improve the traffic in future?
+\item
+  Create a model for a platoon of 6 vehicles that considers a simple
+  dynamic model of 2nd order. \textbf{Note: Consider for this case a
+  model in which no drag is present within the model.}. This model can
+  be written as in \eqref{eq:platoon} where the stability can be analyzed.
+\item
+  Which could be the traffic parameters in this kind of models?
+\end{itemize}
+
 \hypertarget{expected-outcomes-4}{%
 \subsubsection*{Expected outcomes}\label{expected-outcomes-4}}
 \addcontentsline{toc}{subsubsection}{Expected outcomes}
+
+\begin{itemize}
+\tightlist
+\item
+  Present a brief summary on the motivations to create vehicle platoons
+  and the main existing models that can be developed for this purpose.
+\item
+  Based on the work of (Duret, Wang, and Ladino
+  \protect\hyperlink{ref-Duret2019:ISTTT}{2019}\protect\hyperlink{ref-Duret2019:ISTTT}{a}),
+  (Wang et al. \protect\hyperlink{ref-Meng2014b:TR-C}{2014}) determine
+  writedown the state equation for a platoon model of 4 vehicles.
+\item
+  Determine the stability properties of the model. Stability properties
+  are associated to the location of zeros and poles of the transfer
+  function of the model or eigen values of the matrix
+  \href{https://en.wikipedia.org/wiki/Stability_theory}{See more}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{task-2-open-loop-simulation}{%
 \subsection*{Task 2: Open loop
@@ -726,6 +823,8 @@ simulation}\label{task-2-open-loop-simulation}}
 \subsection*{Task 3: Vehicle platoon
 control}\label{task-3-vehicle-platoon-control}}
 \addcontentsline{toc}{subsection}{Task 3: Vehicle platoon control}
+
+\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{context-7}{%
 \subsubsection*{Context}\label{context-7}}
@@ -766,8 +865,8 @@ evaluation}\label{task-4-performance-evaluation-1}}
   results - Github}
 \item
   Check (Duret, Wang, and Ladino
-  \protect\hyperlink{ref-Duret2019}{2019}) available
-  \href{http://bit.ly/Hierarchical_ISTTT}{Link}
+  \protect\hyperlink{ref-Duret2019}{2019}\protect\hyperlink{ref-Duret2019}{b})
+  available \href{http://bit.ly/Hierarchical_ISTTT}{Link}
 \end{itemize}
 
 \hypertarget{project-4-density-reconstruction}{%
@@ -842,11 +941,21 @@ The main reference for this project is (Ladino et al.
 \protect\hyperlink{ref-Ladino2018}{2018})
 
 \hypertarget{refs}{}
+\leavevmode\hypertarget{ref-Ali2015:ITSM}{}%
+Ali, Alan, Gaetan Garcia, and Philippe Martinet. 2015. ``The flatbed
+platoon towing model for safe and dense platooning on highways.''
+\emph{IEEE Intelligent Transportation Systems Magazine} 7 (1): 58--68.
+\url{https://doi.org/10.1109/MITS.2014.2328670}.
+
+\leavevmode\hypertarget{ref-Duret2019:ISTTT}{}%
+Duret, Aurelien, Meng Wang, and Andres Ladino. 2019a. ``A Hierarchical
+Approach for Splitting Truck Platoons Near Network Discontinuities,''
+no. July: Submitted.
+
 \leavevmode\hypertarget{ref-Duret2019}{}%
-Duret, Aurelien, Meng Wang, and Andres Ladino. 2019. ``A Hierarchical
-Approach for Splitting Truck Platoons Near Network Discontinuities.''
-\emph{Submitted to 23rd International Symposium on Transportation and
-Traffic Theory}.
+---------. 2019b. ``A Hierarchical Approach for Splitting Truck Platoons
+Near Network Discontinuities.'' \emph{Submitted to 23rd International
+Symposium on Transportation and Traffic Theory}.
 
 \leavevmode\hypertarget{ref-Grandinetti2015}{}%
 Grandinetti, Pietro, Carlos Canudas-de-wit, and Federica Garin. 2015.
@@ -875,11 +984,25 @@ Sensor Placement in road networks.'' \emph{Transportation Research Part
 C: Emerging Technologies} 69: 451--76.
 \url{https://doi.org/10.1016/j.trc.2016.06.019}.
 
+\leavevmode\hypertarget{ref-Turri2017}{}%
+Turri, Valerio, Bart Besselink, and Karl H. Johansson. 2017.
+``Cooperative Look-Ahead Control for Fuel-Efficient and Safe Heavy-Duty
+Vehicle Platooning.'' \emph{IEEE Transactions on Control Systems
+Technology} 25 (1): 12--28.
+\url{https://doi.org/10.1109/TCST.2016.2542044}.
+
 \leavevmode\hypertarget{ref-Varaiya2013:TR-C}{}%
 Varaiya, Pravin. 2013. ``Max pressure control of a network of signalized
 intersections.'' \emph{Transportation Research Part C: Emerging
 Technologies} 36 (2): 177--95.
 \url{https://doi.org/10.1016/j.trc.2013.08.014}.
+
+\leavevmode\hypertarget{ref-Meng2014b:TR-C}{}%
+Wang, Meng, Winnie Daamen, Serge P. Hoogendoorn, and Bart van Arem.
+2014. ``Rolling horizon control framework for driver assistance systems.
+Part II: Cooperative sensing and cooperative control.''
+\emph{Transportation Research Part C} 40: 290--311.
+\url{https://doi.org/10.1016/j.trc.2013.11.024}.
 
 
 \end{document}

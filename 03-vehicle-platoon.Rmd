@@ -1,24 +1,54 @@
 # Project 2: Vehicle Platooning
 
-The main objective of this project is to design a controller for a platoon of vehicles in order to optimize the flow 
-and reduce the fuel consumption. A platoon of vehicles can be seen as: 
+The main objective of this project is to design a controller for a platoon of vehicles in order to optimize the traffic flow and reduce the fuel consumption. A platoon of vehicles can be seen as: 
 
+(ref:cav) Example of a vehicle platoon. 
 
+```{r cav, fig.cap='(ref:cav)', fig.align = 'center', fig.width = 4, echo= FALSE}
+knitr::include_graphics("images/p2-cavs.png")
+```
 
+The objective illustrated in \@ref(fig:cav) is to control the \emph{headway space} between two single vehicles in a formation of multiple vehicles. This project is inspired in works presented on [@Duret2019:ISTTT] but more information about platoons can be found at [@Ali2015:ITSM].
 
 ## Objectives {-}
 
-This project consists in works based on [@Grandinetti2015]
+The main objective of this project is to:
+
+1. Study the fundamental problem of string stability. 
+2. Obtain and create a dynamic model for vehicle platoons and asociate its parameters with traffic theory. 
+3. Create and design a control strategy for the headway space and analyze its behavior. 
+4. Compare and analyze the behavior of parameter setups for variations of the proposed control strategy
 
 ## Description {-}
 
 ### Task 1: Platoon modeling {-}
 
+Consider the dynamical model presented in [@Duret2019:ISTTT], [@Turri2017] where the problem of truck platooning is detailed.  
+
 #### Context {-}
+
+In general the platoon problem is a *dynamic control problem* where the objective is to regulate or mantain the value of a specific variable within the system at a desired level. In order to produce this regulation a *controller* is requrired and in most of the cases cases there is always a way to express the dynamical model in the following form: 
+
+\begin{align}
+\dot{x}(t) = f(x(t), u(t)) (\#eq:platoon)
+\end{align}
+
+where $x(t), u(t)$ correspond to the state vector, and the control vector of the system. In general a system describing this
 
 #### Questions {-}
 
+* What are the main goals of platoon strategies, and how they can improve the traffic in future? 
+* Create a model for a platoon of 6 vehicles that considers a simple dynamic model of 2nd order. **Note: Consider for this case a model in which no drag is present within the model.**. This model can be written as in  \@ref(eq:platoon) where the stability can be analyzed. 
+* Which could be the traffic parameters in this kind of models? 
+ 
+
 #### Expected outcomes {-}
+
+* Present a brief summary on the motivations to create vehicle platoons and the main existing models that can be developed for this purpose.
+* Based on the work of [@Duret2019:ISTTT], [@Meng2014b:TR-C] determine writedown the state equation for a platoon model of 4 vehicles. 
+* Determine the stability properties of the model. Stability properties are associated to the location of zeros and poles of the transfer function of the model or eigen values of the matrix [See more](https://en.wikipedia.org/wiki/Stability_theory)
+
+***
 
 ### Task 2: Open loop simulation {-}
 
@@ -31,6 +61,8 @@ This project consists in works based on [@Grandinetti2015]
 * Obtain the trajectories for a platoon of 4 vehicles 
 
 ### Task 3: Vehicle platoon control {-}
+
+***
 
 #### Context {-}
 
