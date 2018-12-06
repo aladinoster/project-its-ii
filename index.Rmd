@@ -37,7 +37,7 @@ The current project aims to explore some of the new technologies used in the so 
 
 ## Projects {-}
 
-Specially, in this case the project will be focused in four main activities: 
+Specially, in this case the project will be focused in three main activities: 
 
 - **Trafic signal design:** This projects aims to study how to optimally deal with the design of light cycles to optimize the traffic performance. Based on information collected by infrastructure based sensors the traffic state can be determined and specific decisions in terms on green/red light times can be dynamically adapted. 
 - **Vehicle Platooning:**  New in-vechicle sensors create situations in which vehicles may exchange information to improve traffic conditions. This project aims to study control algorithms implemented in the V2V (Vehicle-vehicle) communication layer that can be used to design traffic decisions. 
@@ -51,4 +51,12 @@ Specially, in this case the project will be focused in four main activities:
 * Define and determine adequate models that are suitable for deploying new ITS technologies. 
 * Develop specific solutions for ITS that can be tested under pre-defined scenarios. 
 
+*** 
+
+## Materials {-}
+
+Please find the slides at: 
+
+* Part I: [Slides Estimation](http://bit.ly/ITSIIS05E01)
+* Part II: [Slides Control](http://bit.ly/ITSIIS05E02)
 
