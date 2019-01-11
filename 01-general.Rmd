@@ -28,6 +28,8 @@ The project is mainly composed in 3 phases.
 
 In order to fullfill the requirements for each phase each group should provide a report as follows:
 
-- *Report 1:* Summarizes the results of the 1. Problem identification & literature review and 2. Setting up a suitable model. (***Due date: January 9th, 2018***)
+- *Report 1:* Summarizes the results of the 1. Problem identification & literature review and 2. Setting up a suitable model. (***Due date: January 14th, 2018***)
 
-* *Report 2:* Summarizes the results of the phase 3.Experimental results (***Due date: January 23rd, 2019***)
+- *Report 2:* Summarizes the results of the phase 3.Experimental results (***Due date: January 28th, 2019***)
+
+- Final presentation: Oral presentation with all results (**Due date: February 13th, 2019**)

@@ -126,7 +126,10 @@
 <div id="project-3-density-reconstruction" class="section level1 unnumbered">
 <h1>Project 3: Density Reconstruction</h1>
 <p>The state of congestion of a city is one of the critical. This project aims to study the reconstruction of traffic variables from different type of sources. For more information the detail of this work can be found at <span class="citation">(Lovisari, Canudas-de-wit, and Kibangou <a href="#ref-Lovisari2016">2016</a>)</span>, <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span>.</p>
-<p><img src="images/p4-01-density.png" /></p>
+<div class="figure">
+<img src="images/p4-01-density.png" />
+
+</div>
 <p>In this approach in particular, the reconstruction of density will be based on multiple hypothesys.</p>
 <ul>
 <li>There exist multiple sources of traffic information such as <em>Floating Car Data (FCD)</em> or <em>Magnetic Loop Data (MLD)</em>, the nature of these two measurements is different. While FCD can be collected easily and almost every where in the traffic network, it is not really representative of the congestion state due to the penetration rate. Its counter part MLD is accurate when determining the amount of vehicles circulating at specific spots, but extending this mechanism of measurement to the whole network is expensive.</li>
@@ -192,13 +195,13 @@ Figure 10: City network model
 <div id="context-10" class="section level4 unnumbered">
 <h4>Context</h4>
 <p>In order to implement the model of the network that will help the reconstruction algorithm, please consider</p>
-<p><span class="math display" id="eq:lwr">\[\begin{align}
+<span class="math display" id="eq:lwr">\[\begin{align}
 \rho(k+1) = \rho(k) + (R^T - I)\varphi^{out}(t) + \varphi^{ext}(t) \tag{5}
-\end{align}\]</span></p>
+\end{align}\]</span>
 <p>where in particular <span class="math inline">\(\varphi^{out}(k)\)</span> is found:</p>
-<p><span class="math display">\[\begin{align}
+<span class="math display">\[\begin{align}
 \underset{\varphi^{out}}{\max} \sum_i \varphi^{out}_i\quad \text{s.t}\quad \varphi^{out} \in \mathcal{P}
-\end{align}\]</span></p>
+\end{align}\]</span>
 </div>
 <div id="questions-9" class="section level4 unnumbered">
 <h4>Questions</h4>
@@ -224,9 +227,9 @@ Figure 10: City network model
 <h4>Context</h4>
 <p>Two different reconstruction algorithms have been proposed in <span class="citation">(Lovisari, Canudas-de-wit, and Kibangou <a href="#ref-Lovisari2016">2016</a>)</span> and <span class="citation">(Ladino et al. <a href="#ref-Ladino2018">2018</a>)</span>, both of them follow the principle of accounting for speed and flow measurements in order to retrieve the state of the network. Please exam these works before implementing the estimation algorithm.</p>
 <p>The estimation technique can be reduced to the solution of the following optimal problem</p>
-<p><span class="math display">\[\begin{align}
+<span class="math display">\[\begin{align}
 \underset{\rho,\varphi}{\min} \|C\varphi - \bar{\varphi}\|^2 + \|S(\rho - \Psi^{-1}(v))\|^2 +  \|(R^T-I)\varphi +\varphi^{ext}\|^2\quad \text{s.t}\quad \varphi \in \mathcal{P}_\varphi, \rho \in \mathcal{P}_\rho
-\end{align}\]</span></p>
+\end{align}\]</span>
 </div>
 <div id="questions-10" class="section level4 unnumbered">
 <h4>Questions</h4>
@@ -284,13 +287,13 @@ Figure 10: City network model
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-Lovisari2016">
-<p>Lovisari, E., Carlos Canudas-de-wit, and Alain Y Kibangou. 2016. “Density/Flow reconstruction via heterogeneous sources and Optimal Sensor Placement in road networks.” <em>Transportation Research Part C: Emerging Technologies</em> 69. Elsevier Ltd: 451–76. <a href="https://doi.org/10.1016/j.trc.2016.06.019" class="uri">https://doi.org/10.1016/j.trc.2016.06.019</a>.</p>
+<p>Lovisari, E., Carlos Canudas-de-wit, and Alain Y Kibangou. 2016. “Density/Flow reconstruction via heterogeneous sources and Optimal Sensor Placement in road networks.” <em>Transportation Research Part C: Emerging Technologies</em> 69. Elsevier Ltd: 451–76. doi:<a href="https://doi.org/10.1016/j.trc.2016.06.019">10.1016/j.trc.2016.06.019</a>.</p>
 </div>
 <div id="ref-Ladino2018">
 <p>Ladino, Andres, Carlos Canudas-de-wit, Alain Kibangou, Hassen Fourati, and Martin Rodriguez. 2018. “Density and flow reconstruction in urban traffic networks using heterogeneous data sources.” In <em>2018 European Control Conference, Ecc 2018</em>, edited by IEEE. Limasol, Chyprus.</p>
 </div>
 <div id="ref-Daganzo1994:TR-B">
-<p>Daganzo, Carlos F. 1994. “The cell transmission model: A dynamic representation of highway traffic consistent with the hydrodynamic theory.” <em>Transportation Research Part B</em> 28 (4): 269–87. <a href="https://doi.org/10.1016/0191-2615(94)90002-7" class="uri">https://doi.org/10.1016/0191-2615(94)90002-7</a>.</p>
+<p>Daganzo, Carlos F. 1994. “The cell transmission model: A dynamic representation of highway traffic consistent with the hydrodynamic theory.” <em>Transportation Research Part B</em> 28 (4): 269–87. doi:<a href="https://doi.org/10.1016/0191-2615(94)90002-7">10.1016/0191-2615(94)90002-7</a>.</p>
 </div>
 </div>
             </section>
@@ -359,7 +362,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
