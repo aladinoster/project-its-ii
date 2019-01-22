@@ -61,7 +61,7 @@ knitr::include_graphics("images/p1-01-network.png")
 
 #### Questions {-}
 
-* Explore the relationship of the fundamental diagram  \@ref(fig:fdiag). Remember that this is a function defined for two different intervals. Knowing that $\phi = v\rho$ is a fundamnetal relationship on traffic, determine the relationship between $v$ and $\rho$. Is it possible to have a univoque relationsihp for all cases? 
+* Explore the relationship of the fundamental diagram  \@ref(fig:fdiag). Remember that this is a function defined for two different intervals. Knowing that $\phi = v\rho$ is a fundamental relationship on traffic, determine the relationship between $v$ and $\rho$. Is it possible to have a univoque relationship for all cases? 
 * Check the conditions that are required for recovering the density in [@Lovisari2016], why are these conditions required? 
 * Based on a literature review, determine the traffic model for teh network exposed in \@ref(fig:citynet).
 
